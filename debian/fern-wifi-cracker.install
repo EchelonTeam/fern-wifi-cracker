@@ -1,0 +1,7 @@
+debian/helper-script/fern-wifi-cracker usr/bin/
+core usr/share/fern-wifi-cracker/
+*.py usr/share/fern-wifi-cracker/
+extras usr/share/fern-wifi-cracker/
+gui usr/share/fern-wifi-cracker/
+resources usr/share/fern-wifi-cracker/
+version usr/share/fern-wifi-cracker/

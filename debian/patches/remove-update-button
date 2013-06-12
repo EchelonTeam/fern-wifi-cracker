@@ -1,0 +1,64 @@
+Removed update functionality from the tool.
+--- a/core/fern.py
++++ b/core/fern.py
+@@ -69,7 +69,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog
+         self.connect(self,QtCore.SIGNAL("wpa_button_false"),self.wpa_button_false)
+ 
+         self.connect(self.database_button,QtCore.SIGNAL("clicked()"),self.database_window)
+-        self.connect(self.update_button,QtCore.SIGNAL("clicked()"),self.update_fern)
++#        self.connect(self.update_button,QtCore.SIGNAL("clicked()"),self.update_fern)
+         self.connect(self,QtCore.SIGNAL("finished downloading"),self.finished_downloading_files)
+         self.connect(self,QtCore.SIGNAL("restart application"),self.restart_application)
+         self.connect(self,QtCore.SIGNAL("failed update"),self.update_fail)
+@@ -156,8 +156,8 @@ class mainwindow(QtGui.QDialog,Ui_Dialog
+         self.update_label.setText('<font color=green>Latest update is already installed</font>')
+ 
+     def new_update_avialable(self):
+-        self.update_label.setText('<font color=green>New Update is Available</font>')
+-        self.update_button.setFocus()
++        self.update_label.setText('<font color=green>No New Update is Available</font>')
++#        self.update_button.setFocus()
+ 
+     def update_error(self):
+         global svn_access
+--- a/gui/main_window.py
++++ b/gui/main_window.py
+@@ -82,22 +82,22 @@ class Ui_Dialog(object):
+         self.horizontalLayout.addItem(spacerItem2)
+         self.verticalLayout_22 = QtGui.QVBoxLayout()
+         self.verticalLayout_22.setObjectName(_fromUtf8("verticalLayout_22"))
+-        self.update_button = QtGui.QPushButton(Dialog)
+-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Ignored, QtGui.QSizePolicy.Ignored)
+-        sizePolicy.setHorizontalStretch(0)
+-        sizePolicy.setVerticalStretch(0)
+-        sizePolicy.setHeightForWidth(self.update_button.sizePolicy().hasHeightForWidth())
+-        self.update_button.setSizePolicy(sizePolicy)
+-        font = QtGui.QFont()
+-        font.setPointSize(font_setting)
+-        self.update_button.setFont(font)
+-        self.update_button.setText(_fromUtf8(""))
+-        icon1 = QtGui.QIcon()
+-        icon1.addPixmap(QtGui.QPixmap(_fromUtf8("%s/resources/1295008956_system-software-update.png"%(os.getcwd()))), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+-        self.update_button.setIcon(icon1)
+-        self.update_button.setIconSize(QtCore.QSize(35, 34))
+-        self.update_button.setObjectName(_fromUtf8("update_button"))
+-        self.verticalLayout_22.addWidget(self.update_button)
++#        self.update_button = QtGui.QPushButton(Dialog)
++#        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Ignored, QtGui.QSizePolicy.Ignored)
++#        sizePolicy.setHorizontalStretch(0)
++#        sizePolicy.setVerticalStretch(0)
++#        sizePolicy.setHeightForWidth(self.update_button.sizePolicy().hasHeightForWidth())
++#        self.update_button.setSizePolicy(sizePolicy)
++#        font = QtGui.QFont()
++#        font.setPointSize(font_setting)
++#        self.update_button.setFont(font)
++#        self.update_button.setText(_fromUtf8(""))
++#        icon1 = QtGui.QIcon()
++#        icon1.addPixmap(QtGui.QPixmap(_fromUtf8("%s/resources/1295008956_system-software-update.png"%(os.getcwd()))), QtGui.QIcon.Normal, QtGui.QIcon.Off)
++#        self.update_button.setIcon(icon1)
++#        self.update_button.setIconSize(QtCore.QSize(35, 34))
++#        self.update_button.setObjectName(_fromUtf8("update_button"))
++#        self.verticalLayout_22.addWidget(self.update_button)
+         spacerItem3 = QtGui.QSpacerItem(13, 30, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
+         self.verticalLayout_22.addItem(spacerItem3)
+         self.horizontalLayout.addLayout(self.verticalLayout_22)

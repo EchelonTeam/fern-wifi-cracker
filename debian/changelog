@@ -1,3 +1,9 @@
+fern-wifi-cracker (1.90-1kali0) kali; urgency=low
+
+  * Imported new upstream version and disabled updates
+
+ -- Devon Kearns <dookie@kali.org>  Wed, 12 Jun 2013 13:10:10 -0600
+
 fern-wifi-cracker (1.86-1kali0) kali; urgency=low
 
   * Initial release 

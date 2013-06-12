@@ -61,14 +61,14 @@ class Mozilla_Cookie_Core(object):
         mozilla_cookie_db = sqlite3.connect(self.cookie_database)
         mozilla_cursor = mozilla_cookie_db.cursor()
         try:
-            mozilla_cursor.execute(sql_statement)
+            mozilla_cursor.execute(str(sql_statement))
         except Exception,e:
             mozilla_cursor.close()
             os.remove(self.cookie_database)
             self._create_moz_cookies()
             mozilla_cookie_db = sqlite3.connect(self.cookie_database)
             mozilla_cursor = mozilla_cookie_db.cursor()
-            mozilla_cursor.execute(sql_statement)
+            mozilla_cursor.execute(str(sql_statement))
 
         return_objects = mozilla_cursor.fetchall()
         if(return_objects):
@@ -108,7 +108,7 @@ class Mozilla_Cookie_Core(object):
         creationTime = self.calculate_mozilla_creationTime()    # 1342948082 + 023 + 0000 = (length == 16)
         lastAccessed = creationTime
 
-        expiry = str(int(time.time()) + 1065600)                # (Sun Jul 22 09:08:42 2012) -> (Fri Aug 3 17:45:51 2012) 12 days
+        expiry = str(int(time.time()) + 1065600)                # Example : (Sun Jul 22 09:08:42 2012) -> (Fri Aug 3 17:45:51 2012) 12 days
 
         sql_code_b = "insert into moz_cookies values ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"
         sql_code_b = sql_code_b % (id_number,baseDomain,name,value,host,path,expiry,lastAccessed,creationTime,isSecure,isHttpOnly)

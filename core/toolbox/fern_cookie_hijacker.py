@@ -64,6 +64,9 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
         self.connect(self,QtCore.SIGNAL("on sniff green light"),self.on_sniff_green_light)      # Will bink the sniff led green for some seconds control from blink_light()
         self.connect(self,QtCore.SIGNAL("Continue Sniffing"),self.start_Cookie_Attack_part)
 
+        self.connect(self,QtCore.SIGNAL("display_error(QString)"),self.display_error)           # Will display any error to main screen
+        self.connect(self,QtCore.SIGNAL("Deactivate"),self.deactivate)
+
 
     def set_channel_options(self):
         self.channel_dict = {1:"2.412 GHZ",2:"2.417 GHZ",3:"2.422 GHZ",4:"2.427 GHZ",5:"2.432 GHZ",6:"2.437 GHZ",7:"2.442 GHZ",8:"2.447 GHZ",9:"2.452 GHZ",10:"2.457 GHZ"
@@ -138,7 +141,7 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
 
     def display_error(self,message):
         self.cookies_captured_label.setText(
-            "<font color=red><b>" + message + "</b></font>")
+            "<font color=red><b>" + str(message) + "</b></font>")
 
 
     def firefox_is_installed(self):
@@ -290,7 +293,7 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
                     cookie_open_file.write("-" * (len(web_addr) + 5))
                     cookie_open_file.write("\n")
 
-                    self.cookie_db_cursor.execute("select distinct Name,Value from cookie_cache where source = '%s' and Web_Address = '%s'"%(ip_address,web_addr))
+                    self.cookie_db_cursor.execute("select distinct Name,Value from cookie_cache where source = ? and Web_Address = ?",(ip_address,web_addr))
                     cookies_values = self.cookie_db_cursor.fetchall()
 
                     for cookies in cookies_values:
@@ -316,6 +319,7 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
 
     def Delete_Cookie(self):
         self.treeWidget.currentItem().removeChild(self.treeWidget.currentItem())
+
 
 
     def open_web_address(self,address):
@@ -428,7 +432,7 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
                 item_1.setIcon(0, icon)
 
                 self.treeWidget.topLevelItem(count_a).child(count_b).setText(0,web_addr)
-                self.cookie_db_cursor.execute("select distinct Name,Value from cookie_cache where source = '%s' and Web_Address = '%s'"%(ip_address,web_addr))
+                self.cookie_db_cursor.execute("select distinct Name,Value from cookie_cache where source = ? and Web_Address = ?", (ip_address,web_addr))
                 cookies_values = self.cookie_db_cursor.fetchall()
 
                 for count_c,cookies in enumerate(cookies_values):
@@ -443,10 +447,9 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
 
     def prepare_Mozilla_Database(self):
         sql_code_a = "select value from cache_settings where setting = 'cookie_path'"
-        sql_code_c = "insert into cache_settings values ('%s','%s')"
+        sql_code_c = "insert into cache_settings values (?,?)"
         if(self.firefox_is_installed()):
             if not self.mozilla_cookie_engine.cookie_database:
-
                 database_path = os.getcwd() + "/key-database/Cookie.db"
                 cookie_db_jar = sqlite3.connect(database_path)
                 cookie_db_cursor = cookie_db_jar.cursor()
@@ -458,16 +461,24 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
                         self.emit(QtCore.SIGNAL("creating cache"))
                         path = self.mozilla_cookie_engine.get_Cookie_Path("cookies.sqlite")
                         if not path:
-                            raise Exception("cookies.sqlite3 firefox database has not been created on this system, Please run firefox to create")
+                            error_str = "cookies.sqlite firefox database has not been created on this system, Please run firefox to create it"
+                            self.emit(QtCore.SIGNAL("display_error(QString)"),error_str)
+                            self.emit(QtCore.SIGNAL("Deactivate"))
+                            self.mozilla_cookie_engine.cookie_database = str()
+                            return
                         cookie_db_cursor.execute("delete from cache_settings where setting = 'cookie_path'")
-                        cookie_db_cursor.execute(sql_code_c % ("cookie_path",path))
+                        cookie_db_cursor.execute(sql_code_c ,("cookie_path",path))
                         cookie_db_jar.commit()
                 else:
                     self.emit(QtCore.SIGNAL("creating cache"))
                     path = self.mozilla_cookie_engine.get_Cookie_Path("cookies.sqlite")
                     if not path:
-                        raise Exception("cookies.sqlite3 firefox database has not been created on this system, Please run firefox to create")
-                    cookie_db_cursor.execute(sql_code_c % ("cookie_path",path))
+                        error_str = "cookies.sqlite firefox database has not been created on this system, Please run firefox to create it";
+                        self.emit(QtCore.SIGNAL("display_error(QString)"),error_str)
+                        self.emit(QtCore.SIGNAL("Deactivate"))
+                        self.mozilla_cookie_engine.cookie_database = str()
+                        return
+                    cookie_db_cursor.execute(sql_code_c ,("cookie_path",path))
                     cookie_db_jar.commit()
 
                 cookie_db_jar.close()
@@ -475,6 +486,25 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
             self.mozilla_cookie_engine.execute_query("delete from moz_cookies")
             self.start_Attack()
 
+
+    def deactivate(self):
+        self.sniff_button_control = "START"
+        if(self.ethernet_mode_radio.isChecked()):
+            self.mitm_activated_label.setEnabled(False)
+            self.mitm_activated_label.setText("Internal MITM Engine Activated")
+
+        self.cookie_core.control = False
+
+        self.wep_key_edit.setEnabled(True)                              # Release WEP/WPA Decryption LineEdit
+        self.channel_combo.setEnabled(True)
+        self.start_sniffing_button.setText("Start Sniffing")
+        self.start_sniffing_button.setEnabled(True)
+        self.ethernet_mode_radio.setEnabled(True)
+        self.passive_mode_radio.setEnabled(True)
+
+        self.cookie_core = Cookie_Hijack_Core()
+        self.sniffing_status_led.setPixmap(self.red_light)
+        self.cookie_detection_led.setPixmap(self.red_light)
 
 
     def creating_cache(self):
@@ -594,24 +624,9 @@ class Fern_Cookie_Hijacker(QtGui.QDialog,Ui_cookie_hijacker):
 
 
     def stop_Cookie_Attack(self):
-        self.sniff_button_control = "START"
         if(self.ethernet_mode_radio.isChecked()):
-            self.mitm_activated_label.setEnabled(False)
-            self.mitm_activated_label.setText("Internal MITM Engine Activated")
-
             self.kill_MITM_process()
-
-        self.cookie_core.control = False
-
-        self.wep_key_edit.setEnabled(True)                              # Release WEP/WPA Decryption LineEdit
-        self.channel_combo.setEnabled(True)
-        self.start_sniffing_button.setText("Start Sniffing")
-        self.ethernet_mode_radio.setEnabled(True)
-        self.passive_mode_radio.setEnabled(True)
-
-        self.cookie_core = Cookie_Hijack_Core()
-        self.sniffing_status_led.setPixmap(self.red_light)
-        self.cookie_detection_led.setPixmap(self.red_light)
+        self.deactivate()
 
 
     def kill_MITM_process(self):

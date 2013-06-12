@@ -14,7 +14,7 @@ def initialize():
         create_directory()
     else:
         variable = sys.argv[0]
-        direc = variable.replace('execute.py',"")
+        direc = os.path.dirname(variable)
         if direc:
             os.chdir(direc)
         create_directory()
@@ -40,6 +40,10 @@ def restore_files():
             shutil.copyfile(update_directory + update_file,os.getcwd() + os.sep + update_file)
         else:
             shutil.copytree(update_directory + update_file,os.getcwd() + os.sep + update_file)
+
+    for new_file in os.listdir(os.getcwd()):
+        os.chmod(os.getcwd() + os.sep + new_file,0777)
+
 
 
 

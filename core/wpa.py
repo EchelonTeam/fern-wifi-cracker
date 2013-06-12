@@ -20,7 +20,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.setWindowModality(QtCore.Qt.ApplicationModal)
         self.access_point = str()
         self.client_list = []
-        self.started = False
+        self.started = False                # If False it means attack is not active or has been stopped, can be used to control process
 
         self.wordlist = str()
 
@@ -46,6 +46,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.connect(self,QtCore.SIGNAL("wpa key not found"),self.key_not_found)
         self.connect(self,QtCore.SIGNAL("set maximum"),self.set_maximum)
         self.connect(self,QtCore.SIGNAL("Stop progress display"),self.display_label)
+        self.connect(self,QtCore.SIGNAL("wordlist_lines_counted(QString)"),self.set_progress_bar)
 
         if len(self.client_list) == 0:
             thread.start_new_thread(self.auto_add_clients,())
@@ -553,6 +554,8 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         time.sleep(3)
         self.emit(QtCore.SIGNAL("deauthenticating"))
         while '1 handshake' not in reader('/tmp/fern-log/WPA-DUMP/capture_status.log'):
+            if(self.started == False):                                  # Break deauthentication loop if attack has been stopped
+                return
             thread.start_new_thread(self.deauthenticate_client,())
             time.sleep(10)
             thread.start_new_thread(self.capture_check,())
@@ -704,8 +707,15 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
                     self.injection_work_label_2.setEnabled(True)
                     self.injection_work_label_2.setText('<font color=red><b>Select Wordlist</b></font>')
 
-                self.progress_bar_max = line_count(get_temp_name)
-                self.progressBar.setMaximum(self.progress_bar_max)
+                self.progressBar.setMaximum(10000)                                                  # Temporarily set the progressBar to 10000, until actual wordlist count is determined
+
+                if(self.settings.setting_exists(get_temp_name)):                                    # if the line count exists for previously used wordlist
+                    self.progress_bar_max = int(self.settings.read_last_settings(get_temp_name))    # set the progress_bar variable to the cached count
+                    self.progressBar.setMaximum(self.progress_bar_max)
+                else:
+                    thread.start_new_thread(self.find_dictionary_length,(get_temp_name,))           # open thread to count the number of lines in the new wordlist
+
+
                 commands.getstatusoutput('killall airodump-ng')
                 commands.getstatusoutput('killall aireplay-ng')
                 self.associate_label.setEnabled(True)
@@ -724,6 +734,16 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
                 thread.start_new_thread(self.wpa_capture,())
 
                 thread.start_new_thread(self.capture_loop,())
+
+
+    def find_dictionary_length(self,filename):
+        self.progress_bar_max = line_count(filename)
+        self.emit(QtCore.SIGNAL("wordlist_lines_counted(QString)"),filename)
+
+
+    def set_progress_bar(self,filename):
+        self.progressBar.setMaximum(self.progress_bar_max)
+        self.settings.create_settings(filename,str(self.progress_bar_max))
 
 
 

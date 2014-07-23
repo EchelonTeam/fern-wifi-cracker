@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/219/Fern-Wifi-Cracker/core
+END
+database.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/174/Fern-Wifi-Cracker/core/database.py
+END
+wpa.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/206/Fern-Wifi-Cracker/core/wpa.py
+END
+functions.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/205/Fern-Wifi-Cracker/core/functions.py
+END
+variables.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/193/Fern-Wifi-Cracker/core/variables.py
+END
+wps.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/217/Fern-Wifi-Cracker/core/wps.py
+END
+fern.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/219/Fern-Wifi-Cracker/core/fern.py
+END
+wep.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/196/Fern-Wifi-Cracker/core/wep.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/183/Fern-Wifi-Cracker/core/__init__.py
+END
+settings.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/183/Fern-Wifi-Cracker/core/settings.py
+END
+tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/203/Fern-Wifi-Cracker/core/tools.py
+END

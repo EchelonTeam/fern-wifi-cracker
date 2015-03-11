@@ -23,7 +23,7 @@ from settings import *
 
 from gui.main_window import *
 
-__version__= 1.96
+__version__= 2.1
 
 #
 # Main Window Class
@@ -49,10 +49,16 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
         self.settings = Fern_settings()
 
+        self.timer = QtCore.QTimer()
+        self.connect(self.timer,QtCore.SIGNAL("timeout()"),self.display_timed_objects)
+        self.timer.setInterval(4000)
+        self.timer.start()
+
         self.connect(self,QtCore.SIGNAL("DoubleClicked()"),self.mouseDoubleClickEvent)
         self.connect(self.refresh_intfacebutton,QtCore.SIGNAL("clicked()"),self.refresh_interface)
         self.connect(self.interface_combo,QtCore.SIGNAL("currentIndexChanged(QString)"),self.setmonitor)
         self.connect(self,QtCore.SIGNAL("monitor mode enabled"),self.monitor_mode_enabled)
+        self.connect(self,QtCore.SIGNAL("monitor_error(QString,QString)"),self.display_monitor_error)
         self.connect(self,QtCore.SIGNAL("interface cards found"),self.interface_cards_found)
         self.connect(self,QtCore.SIGNAL("interface cards not found"),self.interface_card_not_found)
         self.connect(self.scan_button,QtCore.SIGNAL("clicked()"),self.scan_network)
@@ -97,6 +103,25 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         try:
             self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMaximizeButtonHint)       # Some older versions of Qt4 dont support some flags
         except:pass
+
+
+    def display_timed_objects(self):
+        self.show_Fern_Pro_tip()
+        self.timer.stop()
+
+
+
+    def show_Fern_Pro_tip(self):
+        if(self.settings.setting_exists("fern_pro_tips")):
+            if(self.settings.read_last_settings("fern_pro_tips") == "0"):
+                tips = Fern_Pro_Tips()
+                tips.exec_()
+        else:
+            self.settings.create_settings("fern_pro_tips","0")
+            tips = Fern_Pro_Tips()
+            tips.exec_()
+
+
 
     #
     #   Read database entries and count entries then set Label on main window
@@ -438,9 +463,17 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
     def set_monitor_thread(self,monitor_card,mac_setting_exists,last_settings):
         status = str(commands.getoutput("airmon-ng start %s"%(monitor_card)))
-        if 'monitor mode enabled' in status:
+
+        if ('monitor mode enabled' in status) or ('monitor mode vif enabled' in status):
             monitor_interface_process = str(commands.getoutput("airmon-ng"))
-            regex = re.compile("mon\d",re.IGNORECASE)
+
+            regex = object()
+            if ('monitor mode enabled' in status):
+                regex = re.compile("mon\d",re.IGNORECASE)
+
+            elif ('monitor mode vif enabled' in status):
+                regex = re.compile("wlan\dmon",re.IGNORECASE)
+
             interfaces = regex.findall(monitor_interface_process)
             if(interfaces):
                 self.monitor_interface = interfaces[0]
@@ -464,6 +497,15 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
                     os.chmod('/sys/class/net/' + self.monitor_interface + '/address',0777)
                     variables.monitor_mac_address = reader('/sys/class/net/' + self.monitor_interface + '/address').strip()
                     variables.wps_functions.monitor_mac_address = variables.monitor_mac_address
+        else:
+            self.emit(QtCore.SIGNAL("monitor_error(QString,QString)","red","problem occured while setting up the monitor mode of selected"))
+
+
+
+    def display_monitor_error(self,color,error):
+        message = "<font color='%1'>%2</font>"
+        self.mon_label.setText(message.format(color,error))
+        self.animate_monitor_mode(False)
 
 
     def tip_display(self):

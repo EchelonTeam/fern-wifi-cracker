@@ -2,15 +2,15 @@ Source: fern-wifi-cracker
 Section: utils
 Priority: extra
 Maintainer: Devon Kearns <dookie@kali.org>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.3
-Homepage: http://code.google.com/p/fern-wifi-cracker/
-Vcs-Git: ssh://git@git.kali.org/packages/fern-wifi-cracker.git
+Homepage: https://github.com/savio-code/fern-wifi-cracker
+Vcs-Git: git://git.kali.org/packages/fern-wifi-cracker.git
 Vcs-Browser: http://git.kali.org/gitweb/?p=packages/fern-wifi-cracker.git;a=summary
 
 Package: fern-wifi-cracker
 Architecture: all
-Depends: ${misc:Depends}, python, python-support, python-qt4, reaver, macchanger, aircrack-ng, xterm, subversion, python-scapy
+Depends: ${misc:Depends}, python, python-qt4, reaver, macchanger, aircrack-ng, xterm, subversion, python-scapy
 Description: Automated wifi cracker
  Fern Wifi Cracker is a Wireless security auditing and 
  attack software program written using the Python 

@@ -1,3 +1,10 @@
+fern-wifi-cracker (2.2-0kali1) kali-dev; urgency=medium
+
+  * Drop dependency on python-support (obsolete package) 
+  * Update to use debhelper 9
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 28 Jan 2016 09:56:27 +0100
+
 fern-wifi-cracker (2.2-0kali0) kali; urgency=low
 
   * Imported new upstream release (Closes: 0002218)

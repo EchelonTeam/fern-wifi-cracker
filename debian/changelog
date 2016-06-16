@@ -1,3 +1,9 @@
+fern-wifi-cracker (2.3-0kali1) kali-dev; urgency=medium
+
+  * Upstream update
+
+ -- Mati Aharoni <muts@kali.org>  Thu, 16 Jun 2016 17:49:19 -0400
+
 fern-wifi-cracker (2.2-0kali1) kali-dev; urgency=medium
 
   * Drop dependency on python-support (obsolete package) 

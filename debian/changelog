@@ -1,3 +1,9 @@
+fern-wifi-cracker (2.4-0kali1) kali-dev; urgency=medium
+
+  * Imported new upstream release (Closes: 0003693)
+
+ -- Devon Kearns <dookie@kali.org>  Tue, 08 Nov 2016 15:50:01 -0700
+
 fern-wifi-cracker (2.3-0kali1) kali-dev; urgency=medium
 
   * Upstream update

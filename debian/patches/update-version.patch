@@ -1,0 +1,11 @@
+--- a/Fern-Wifi-Cracker/core/fern.py
++++ b/Fern-Wifi-Cracker/core/fern.py
+@@ -23,7 +23,7 @@ from settings import *
+ 
+ from gui.main_window import *
+ 
+-__version__= 2.4
++__version__= 2.5
+ 
+ #
+ # Main Window Class

@@ -1,3 +1,9 @@
+fern-wifi-cracker (2.5-0kali1) kali-dev; urgency=medium
+
+  * Import new upstream release
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 16 Feb 2017 09:52:27 +0100
+
 fern-wifi-cracker (2.4-0kali1) kali-dev; urgency=medium
 
   * Imported new upstream release (Closes: 0003693)

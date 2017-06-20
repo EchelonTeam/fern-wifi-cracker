@@ -78,16 +78,6 @@ from gui import *
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     run = fern.mainwindow()
-
-    pixmap = QtGui.QPixmap("%s/resources/screen_splash.png" % (os.getcwd()))
-    screen_splash = QtGui.QSplashScreen(pixmap,QtCore.Qt.WindowStaysOnTopHint)
-    screen_splash.setMask(pixmap.mask())
-    screen_splash.show()
-    app.processEvents()
-
-    time.sleep(3)
-
-    screen_splash.finish(run)
     run.show()
     app.exec_()
 

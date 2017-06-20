@@ -21,12 +21,6 @@ def initialize():
 
 
 def restore_files():
-    '''Fern 1.2 update algorithm fails to update the new version files
-        therefore this piece of code corrects that defect when running
-        the program after an update from 1.2'''
-
-    update_directory = '/tmp/Fern-Wifi-Cracker/'
-
     for old_file in os.listdir(os.getcwd()):
         if os.path.isfile(os.getcwd() + os.sep + old_file) and old_file != '.font_settings.dat':
             os.remove(os.getcwd() + os.sep + old_file)
@@ -34,12 +28,6 @@ def restore_files():
     for old_directory in os.listdir(os.getcwd()):
         if os.path.isdir(os.getcwd() + os.sep + old_directory) and old_directory != 'key-database':
             shutil.rmtree(os.getcwd() + os.sep + old_directory)
-
-    for update_file in os.listdir('/tmp/Fern-Wifi-Cracker'):        # Copy New update files to working directory
-        if os.path.isfile(update_directory + update_file):
-            shutil.copyfile(update_directory + update_file,os.getcwd() + os.sep + update_file)
-        else:
-            shutil.copytree(update_directory + update_file,os.getcwd() + os.sep + update_file)
 
     for new_file in os.listdir(os.getcwd()):
         os.chmod(os.getcwd() + os.sep + new_file,0777)

@@ -15,10 +15,7 @@ scan_control = 0
 static_channel = str()
 monitor_interface = str()
 monitor_mac_address = str()
-#
-# Update checking loop (control variable)
-#
-updater_control = 0
+
 xterm_setting = ''
 #
 # Wep Global variables

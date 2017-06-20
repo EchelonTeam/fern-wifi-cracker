@@ -3,8 +3,6 @@ import re
 import sys
 import time
 import thread
-import urllib2
-import shutil
 import sqlite3
 import commands
 import subprocess
@@ -75,23 +73,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         self.connect(self,QtCore.SIGNAL("wpa_button_false"),self.wpa_button_false)
 
         self.connect(self.database_button,QtCore.SIGNAL("clicked()"),self.database_window)
-        self.connect(self.update_button,QtCore.SIGNAL("clicked()"),self.update_fern)
-        self.connect(self,QtCore.SIGNAL("finished downloading"),self.finished_downloading_files)
-        self.connect(self,QtCore.SIGNAL("restart application"),self.restart_application)
-        self.connect(self,QtCore.SIGNAL("failed update"),self.update_fail)
-        self.connect(self,QtCore.SIGNAL("already latest update"),self.latest_update)
-        self.connect(self,QtCore.SIGNAL("previous message"),self.latest_svn)
-        self.connect(self,QtCore.SIGNAL("new update available"),self.new_update_avialable)
-        self.connect(self,QtCore.SIGNAL("current_version"),self.current_update)
-        self.connect(self,QtCore.SIGNAL("download failed"),self.download_failed)
         self.connect(self,QtCore.SIGNAL('internal scan error'),self.scan_error_display)
-        self.connect(self,QtCore.SIGNAL('file downloaded'),self.downloading_update_files)
-
-
-        self.update_label.setText('<font color=green>Currently installed version: Revision %s</font>'%(self.installed_revision()))
-
-        # Display update status on main_windows
-        thread.start_new_thread(self.update_initializtion_check,())
 
         self.set_WindowFlags()
 
@@ -133,178 +115,12 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         variables.xterm_setting = self.settings.read_last_settings("xterm")
 
 
-    #
-    # SIGNALs for update threads
-    #
-    def update_fail(self):
-        self.update_label.setText('<font color=red>Unable to check for updates,network timeout')
-
-    def download_failed(self):
-        self.update_label.setText('<font color=red>Download failed,network timeout')
-
-    def downloading_update_files(self):
-        global file_total
-        global files_downloaded
-
-        self.update_label.setText('<font color=green>Downloading.. %s Complete</font>'\
-        %(self.percentage(files_downloaded,file_total)))
-
-
-    def installed_revision(self):
-        svn_info = commands.getstatusoutput('svn info ' + directory)
-        if svn_info[0] == 0:
-            svn_version = svn_info[1].splitlines()[4].strip('Revision: ')
-        else:
-            svn_version = '94'
-        return svn_version
-
-    def finished_downloading_files(self):
-        self.update_label.setText('<font color=green>Finished Downloading</font>')
-
-    def restart_application(self):
-        self.update_label.setText('<font color=red>Please Restart application</font>')
-
-    def latest_update(self):
-        self.update_label.setText('<font color=green>No new update is available for download</font>')
-
-    def current_update(self):
-        self.update_label.setText('<font color=green>Currently installed version: Revision %s</font>'%(self.installed_revision()))
-
-
-    def latest_svn(self):
-        self.update_label.setText('<font color=green>Latest update is already installed</font>')
-
-    def new_update_avialable(self):
-        self.update_label.setText('<font color=green>New Update is Available</font>')
-        self.update_button.setFocus()
-
-    def update_error(self):
-        global svn_access
-        global svn_failure_message
-        svn_failure_message = str()
-        svn_failure = svn_access.stderr
-        svn_failure_message = svn_failure.read()
-
-
-    #
-    # Update Fern application via SVN,updates at ("svn checkout http://github.com/savio-code/fern-wifi-cracker/trunk/Fern-Wifi-Cracker/")
-    #
-    def update_fern(self):
-        global updater_control
-        updater_control = 1
-        self.update_label.setText('<font color=green>Checking for update...</font>')
-        thread.start_new_thread(self.update_launcher,())
-
-
     def percentage(self,current,total):
         float_point = float(current)/float(total)
         calculation = int(float_point * 100)
         percent = str(calculation) + '%'
         return(percent)
 
-
-    def update_launcher(self):
-        ''' Downloads and installs update files
-        '''
-        global svn_access
-        global file_total
-        global files_downloaded
-        global fern_directory
-
-        file_total = int()
-        files_downloaded = int()
-
-        fern_directory = os.getcwd()
-
-        update_directory = '/tmp/Fern-Wifi-Cracker/'
-
-        try:
-            online_response_check = urllib2.urlopen('https://raw.githubusercontent.com/savio-code/fern-wifi-cracker/master/Fern-Wifi-Cracker/version')
-            online_response = online_response_check.read()
-
-            online_files = re.compile('total_files = \d+',re.IGNORECASE)
-
-            for online_file_total in online_response.splitlines():
-                if re.match(online_files,online_file_total):
-                    file_total = int(online_file_total.split()[2])
-
-            if 'Fern-Wifi-Cracker' in os.listdir('/tmp/'):
-                variables.exec_command('rm -r /tmp/Fern-Wifi-Cracker')
-
-            svn_access = subprocess.Popen('cd /tmp/ \n svn checkout https://github.com/savio-code/fern-wifi-cracker/trunk/Fern-Wifi-Cracker/',\
-                    shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.PIPE)
-            svn_update = svn_access.stdout
-            thread.start_new_thread(self.update_error,())
-            while True:
-                response = svn_update.readline()
-                if len(response) > 0:
-                    files_downloaded += 1
-                    self.emit(QtCore.SIGNAL('file downloaded'))
-
-                if str('revision') in str(response):
-                    self.emit(QtCore.SIGNAL("finished downloading"))
-                                                                                    # Delete all old files (*.py,*.py etc) except ".font_setting.dat" file
-                    for old_file in os.listdir(os.getcwd()):
-                        if os.path.isfile(os.getcwd() + os.sep + old_file) and old_file != '.font_settings.dat':
-                            os.remove(os.getcwd() + os.sep + old_file)
-                                                                                    # Delete all old directories except the "key-database" directory
-                    for old_directory in os.listdir(os.getcwd()):
-                        if os.path.isdir(os.getcwd() + os.sep + old_directory) and old_directory != 'key-database':
-                            shutil.rmtree(os.getcwd() + os.sep + old_directory)
-
-                    for update_file in os.listdir('/tmp/Fern-Wifi-Cracker'):        # Copy New update files to working directory
-                        if os.path.isfile(update_directory + update_file):
-                            shutil.copyfile(update_directory + update_file,os.getcwd() + os.sep + update_file)
-                        else:
-                            shutil.copytree(update_directory + update_file,os.getcwd() + os.sep + update_file)
-
-                    for new_file in os.listdir(os.getcwd()):                        # chmod New files to allow permissions
-                        os.chmod(os.getcwd() + os.sep + new_file,0777)
-
-                    time.sleep(5)
-                    self.emit(QtCore.SIGNAL("restart application"))
-                    break
-                if len(svn_failure_message) > 2:
-                    self.emit(QtCore.SIGNAL("download failed"))
-                    break
-
-        except(urllib2.URLError,urllib2.HTTPError):
-            self.emit(QtCore.SIGNAL("download failed"))
-
-
-    #
-    # Update checker Thread
-    #
-    def update_initializtion_check(self):
-        global updater_control
-        updater_control = 0
-        while updater_control != 1:
-            try:
-                online_response_thread = urllib2.urlopen('https://raw.githubusercontent.com/savio-code/fern-wifi-cracker/master/Fern-Wifi-Cracker/version')
-                online_response_string = ''
-                online_response = online_response_thread.read()
-
-                online_version = re.compile('version = \d+\.?\d+',re.IGNORECASE)
-
-                for version_iterate in online_response.splitlines():
-                    if re.match(online_version,version_iterate):
-                        online_response_string += version_iterate
-
-                update_version_number = float(online_response_string.split()[2])
-
-                if float(__version__) != update_version_number:
-                    self.emit(QtCore.SIGNAL("new update available"))
-                    break
-
-                if float(__version__) == update_version_number:
-                    self.emit(QtCore.SIGNAL("already latest update"))
-                    time.sleep(20)
-                    self.emit(QtCore.SIGNAL("previous message"))
-                    break
-
-            except Exception:
-                self.emit(QtCore.SIGNAL("failed update"))
-                time.sleep(9)
 
     #
     # Launches Tool Box window

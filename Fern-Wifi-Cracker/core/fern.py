@@ -106,21 +106,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
 
     def display_timed_objects(self):
-        self.show_Fern_Pro_tip()
         self.timer.stop()
-
-
-
-    def show_Fern_Pro_tip(self):
-        if(self.settings.setting_exists("fern_pro_tips")):
-            if(self.settings.read_last_settings("fern_pro_tips") == "0"):
-                tips = Fern_Pro_Tips()
-                tips.exec_()
-        else:
-            self.settings.create_settings("fern_pro_tips","0")
-            tips = Fern_Pro_Tips()
-            tips.exec_()
-
 
 
     #

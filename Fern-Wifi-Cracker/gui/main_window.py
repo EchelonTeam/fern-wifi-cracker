@@ -9,7 +9,7 @@ from PyQt4 import QtCore, QtGui
 #
 if '.font_settings.dat' not in os.listdir(os.getcwd()):
     default_font = open('%s/.font_settings.dat'%(os.getcwd()),'a+')
-    default_font.write('font_size = 7')
+    default_font.write('font_size = 9')
     default_font.close()
 
 def font_size():

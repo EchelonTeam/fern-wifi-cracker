@@ -62,7 +62,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         self.connect(self.scan_button,QtCore.SIGNAL("clicked()"),self.scan_network)
         self.connect(self.wep_button,QtCore.SIGNAL("clicked()"),self.wep_attack_window)
         self.connect(self.wpa_button,QtCore.SIGNAL("clicked()"),self.wpa_attack_window)
-        self.connect(self.tool_button,QtCore.SIGNAL("clicked()"),self.tool_box_window)
+        self.connect(self.attack_options_button,QtCore.SIGNAL("clicked()"),self.attack_settings_exec)
 
         self.connect(self,QtCore.SIGNAL("wep_number_changed"),self.wep_number_changed)
         self.connect(self,QtCore.SIGNAL("wep_button_true"),self.wep_button_true)
@@ -122,12 +122,9 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         return(percent)
 
 
-    #
-    # Launches Tool Box window
-    #
-    def tool_box_window(self):
-        tool_box = tool_box_window()
-        tool_box.exec_()
+    def attack_settings_exec(self):
+        wifi_attack_settings_box = wifi_attack_settings()
+        wifi_attack_settings_box.exec_()
     #
     # Execute the wep attack window
     #

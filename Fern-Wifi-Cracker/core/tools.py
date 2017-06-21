@@ -1,76 +1,13 @@
 from core import variables
 
 from gui.tips import *
-from gui.toolbox import *
 from gui.settings import *
-from gui.font_settings import *
 from core.variables import *
 from core.functions import *
 from gui.attack_settings import *
 from core.settings import *
 
 from PyQt4 import QtGui,QtCore
-
-#
-# Tool Box window class
-#
-class tool_box_window(QtGui.QDialog,toolbox_win):
-    def __init__(self):
-        QtGui.QDialog.__init__(self)
-        self.setupUi(self)
-        self.retranslateUi(self)
-        self.setWindowModality(QtCore.Qt.ApplicationModal)
-
-        self.connect(self.pushButton,QtCore.SIGNAL("clicked()"),self.font_exec)
-        self.connect(self.attack_options_button,QtCore.SIGNAL("clicked()"),self.attack_settings_exec)
-
-
-    #
-    #   SETTINGS
-    #
-    def font_exec(self):
-        font_dialog_box = font_dialog()
-        font_dialog_box.exec_()
-
-    def attack_settings_exec(self):
-        wifi_attack_settings_box = wifi_attack_settings()
-        wifi_attack_settings_box.exec_()
-
-
-
-################################################################################
-#                                                                              #
-#                             GENERAL SETTINGS                                 #
-#                                                                              #
-################################################################################
-
-class font_dialog(QtGui.QDialog,font_dialog):
-    def __init__(self):
-        QtGui.QDialog.__init__(self)
-        self.setupUi(self)
-        self.retranslateUi(self)
-        self.setWindowTitle('Font Settings')
-        self.label_2.setText('Current Font: <font color=green><b>%s</b></font>'% \
-                                (reader(os.getcwd() + '/.font_settings.dat' ).split()[2]))
-
-        self.connect(self.buttonBox,QtCore.SIGNAL("accepted()"),self.set_font)
-
-        font_range = []
-        for font_numbers in range(1,21):
-            font_range.append(str(font_numbers))
-        self.comboBox.addItems(font_range)
-
-    def set_font(self):
-        if '.font_settings.dat' in os.listdir(os.getcwd()):
-            os.remove('.font_settings.dat')
-            choosen_font = self.comboBox.currentText()
-            font_string  = 'font_size = %s'%(choosen_font)
-            write('.font_settings.dat',font_string)
-
-        self.close()
-        QtGui.QMessageBox.information(self,'Font Settings','Please restart application to apply changes')
-
-
 
 
 class wifi_attack_settings(QtGui.QDialog,Ui_attack_settings):

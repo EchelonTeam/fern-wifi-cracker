@@ -3,16 +3,11 @@ from core import variables
 from gui.tips import *
 from gui.toolbox import *
 from gui.settings import *
-from gui.geotrack import *
 from gui.font_settings import *
 from core.variables import *
 from core.functions import *
 from gui.attack_settings import *
 from core.settings import *
-
-#from toolbox.fern_tracker import *
-# from toolbox.fern_cookie_hijacker import *
-from toolbox.fern_ray_fusion import *
 
 from PyQt4 import QtGui,QtCore
 
@@ -27,37 +22,7 @@ class tool_box_window(QtGui.QDialog,toolbox_win):
         self.setWindowModality(QtCore.Qt.ApplicationModal)
 
         self.connect(self.pushButton,QtCore.SIGNAL("clicked()"),self.font_exec)
-        self.connect(self.geotrack_button,QtCore.SIGNAL("clicked()"),self.geotrack_exec)
         self.connect(self.attack_options_button,QtCore.SIGNAL("clicked()"),self.attack_settings_exec)
-        self.connect(self.cookie_hijack_button,QtCore.SIGNAL("clicked()"),self.cookie_hijack_exec)
-        self.connect(self.ray_fusion_button,QtCore.SIGNAL("clicked()"),self.ray_fusion_exec)
-
-
-
-
-
-    #
-    #   TOOLBOX FEATURES
-    #
-    def geotrack_exec(self):
-        QtGui.QMessageBox.warning(self,"Geo Tracker","This feature has been deprecated")
-
-
-    def cookie_hijack_exec(self):
-        try:
-            from toolbox import fern_cookie_hijacker
-        except ImportError:
-            QtGui.QMessageBox.warning(self,"Scapy Dependency","Scapy library is currently not installed \nPlease run \"apt-get install python-scapy\" to install the dependency")
-            return
-
-        cookie_hijacker = fern_cookie_hijacker.Fern_Cookie_Hijacker()
-        cookie_hijacker.exec_()
-
-
-    def ray_fusion_exec(self):
-        ray_fusion = Ray_Fusion()
-        ray_fusion.exec_()
-
 
 
     #

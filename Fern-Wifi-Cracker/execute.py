@@ -5,7 +5,7 @@ import sys
 import time
 import shutil
 import commands
-from PyQt4 import QtGui,QtCore
+from PyQt4 import QtGui, QtCore
 
 
 def initialize():
@@ -31,8 +31,6 @@ def restore_files():
 
     for new_file in os.listdir(os.getcwd()):
         os.chmod(os.getcwd() + os.sep + new_file,0777)
-
-
 
 
 def create_directory():
@@ -65,6 +63,9 @@ from gui import *
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
+    translator = QtCore.QTranslator()
+    translator.load('/usr/share/fern-wifi-cracker/ru')
+    app.installTranslator(translator)
     run = fern.mainwindow()
     run.show()
     app.exec_()

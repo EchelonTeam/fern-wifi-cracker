@@ -101,9 +101,9 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         items = query.fetchall()
         connection.close()
         if len(items) == 0:
-            self.label_16.setText('<font color=red>No Key Entries</font>')
+            self.label_16.setText(QtGui.QApplication.translate("more", "<font color=red>No Key Entries</font>", None, QtGui.QApplication.UnicodeUTF8))
         else:
-            self.label_16.setText('<font color=green>%s Key Entries</font>'%(str(len(items))))
+            self.label_16.setText(QtGui.QApplication.translate("more", '<font color=green>%s Key Entries</font>', None, QtGui.QApplication.UnicodeUTF8) %(str(len(items))))
 
 
     #
@@ -208,7 +208,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
     def interface_card_not_found(self):
         self.interface_combo.setEnabled(False)
-        self.mon_label.setText("<font color=red>No Wireless Interface was found</font>")
+        self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=red>No Wireless Interface was found</font>", None, QtGui.QApplication.UnicodeUTF8))
         self.animate_monitor_mode(False)
 
 
@@ -217,7 +217,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         interface_icon = QtGui.QIcon("%s/resources/mac_address.png"%(os.getcwd()))
         for interface in self.interface_cards:
             self.interface_combo.addItem(interface_icon,interface)
-        self.mon_label.setText("<font color=red>Select an interface card</font>")
+        self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=red>Select an interface card</font>", None, QtGui.QApplication.UnicodeUTF8))
         self.animate_monitor_mode(False)
 
 
@@ -253,7 +253,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
             thread.start_new_thread(self.set_monitor_thread,(monitor_card,mac_settings,last_settings,))
             self.animate_monitor_mode(True)
         else:
-            self.mon_label.setText("<font color=red>Monitor Mode not enabled check manually</font>")
+            self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=red>Monitor Mode not enabled check manually</font>", None, QtGui.QApplication.UnicodeUTF8))
             self.animate_monitor_mode(False)
 
 
@@ -342,11 +342,11 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
 
     def display_error_monitor(self):
-        self.display_monitor_error("red","problem occured while setting up the monitor mode of selected")
+        self.display_monitor_error("red",QtGui.QApplication.translate("more", "problem occured while setting up the monitor mode of selected", None, QtGui.QApplication.UnicodeUTF8))
 
 
     def monitor_mode_enabled(self):
-        self.mon_label.setText("<font color=green>Monitor Mode Enabled on %s</font>"%(self.monitor_interface))
+        self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=green>Monitor Mode Enabled on %s</font>"%(self.monitor_interface), None, QtGui.QApplication.UnicodeUTF8))
         self.animate_monitor_mode(False)
         # Execute tips
         if(self.settings.setting_exists("tips")):
@@ -365,14 +365,13 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
             setting = settings_dialog()
             setting.exec_()
         else:
-            self.mon_label.setText("<font color=red>Enable monitor mode to access settings</font>")
+            self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=red>Enable monitor mode to access settings</font>", None, QtGui.QApplication.UnicodeUTF8) )
 
 
     def scan_error_display(self):
         global error_catch
         self.stop_scan_network()
-        QtGui.QMessageBox.warning(self,'Scan Error','Fern failed to start scan due to an airodump-ng error: <font color=red>' \
-                                        + error_catch[1] + '</font>')
+        QtGui.QMessageBox.warning(self,'Scan Error',QtGui.QApplication.translate("more", 'Fern failed to start scan due to an airodump-ng error: <font color=red>' + error_catch[1] + '</font>', None, QtGui.QApplication.UnicodeUTF8) )
 
 
 
@@ -397,15 +396,15 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         variables.wps_functions.start_WPS_Devices_Scan()            # Starts WPS Scanning
 
         if not self.monitor_interface:
-            self.mon_label.setText("<font color=red>Enable monitor mode before scanning</font>")
+            self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=red>Enable monitor mode before scanning</font>", None, QtGui.QApplication.UnicodeUTF8))
         else:
             self.wpa_button.setEnabled(False)
             self.wep_button.setEnabled(False)
             self.wep_clientlabel.setEnabled(False)
             self.wpa_clientlabel.setEnabled(False)
-            self.wep_clientlabel.setText("None Detected")
-            self.wpa_clientlabel.setText("None Detected")
-            self.label_7.setText("<font Color=green>\t Initializing</font>")
+            self.wep_clientlabel.setText(QtGui.QApplication.translate("more", "None Detected", None, QtGui.QApplication.UnicodeUTF8))
+            self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", "None Detected", None, QtGui.QApplication.UnicodeUTF8))
+            self.label_7.setText(QtGui.QApplication.translate("more", "<font Color=green>\t Initializing</font>", None, QtGui.QApplication.UnicodeUTF8))
             thread.start_new_thread(self.scan_wep,())
             self.disconnect(self.scan_button,QtCore.SIGNAL("clicked()"),self.scan_network)
             self.connect(self.scan_button,QtCore.SIGNAL("clicked()"),self.stop_scan_network)
@@ -419,10 +418,10 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         variables.exec_command('rm -r /tmp/fern-log/*.cap')
         variables.exec_command('killall airodump-ng')
         variables.exec_command('killall airmon-ng')
-        self.label_7.setText("<font Color=red>\t Stopped</font>")
+        self.label_7.setText(QtGui.QApplication.translate("more", "<font Color=red>\t Stopped</font>", None, QtGui.QApplication.UnicodeUTF8))
         variables.wps_functions.stop_WPS_Scanning()                 # Stops WPS scanning
-        self.wep_clientlabel.setText("None Detected")
-        self.wpa_clientlabel.setText("None Detected")
+        self.wep_clientlabel.setText(QtGui.QApplication.translate("more", "None Detected", None, QtGui.QApplication.UnicodeUTF8))
+        self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", "None Detected", None, QtGui.QApplication.UnicodeUTF8))
         self.disconnect(self.scan_button,QtCore.SIGNAL("clicked()"),self.stop_scan_network)
         self.connect(self.scan_button,QtCore.SIGNAL("clicked()"),self.scan_network)
 
@@ -433,13 +432,13 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         scan_control = 1
         variables.exec_command('killall airodump-ng')
         variables.exec_command('killall airmon-ng')
-        self.label_7.setText("<font Color=red>\t Stopped</font>")
+        self.label_7.setText(QtGui.QApplication.translate("more", "<font Color=red>\t Stopped</font>", None, QtGui.QApplication.UnicodeUTF8))
 
     #
     # WEP Thread SLOTS AND SIGNALS
     #
     def wep_number_changed(self):
-        self.wep_clientlabel.setText('<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wep_count))
+        self.wep_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wep_count), None, QtGui.QApplication.UnicodeUTF8))
 
     def wep_button_true(self):
         self.wep_button.setEnabled(True)
@@ -448,12 +447,12 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
     def wep_button_false(self):
         self.wep_button.setEnabled(False)
         self.wep_clientlabel.setEnabled(False)
-        self.wep_clientlabel.setText('None Detected')
+        self.wep_clientlabel.setText(QtGui.QApplication.translate("more", 'None Detected', None, QtGui.QApplication.UnicodeUTF8))
     #
     # WPA Thread SLOTS AND SIGNALS
     #
     def wpa_number_changed(self):
-        self.wpa_clientlabel.setText('<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wpa_count))
+        self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wpa_count), None, QtGui.QApplication.UnicodeUTF8))
 
     def wpa_button_true(self):
         self.wpa_button.setEnabled(True)
@@ -462,7 +461,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
     def wpa_button_false(self):
         self.wpa_button.setEnabled(False)
         self.wpa_clientlabel.setEnabled(False)
-        self.wpa_clientlabel.setText('None Detected')
+        self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", 'None Detected', None, QtGui.QApplication.UnicodeUTF8))
 
     #
     # WEP SCAN THREADING FOR AUTOMATIC SCAN OF NETWORK
@@ -566,7 +565,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
         time.sleep(5)
         if scan_control != 1:
-            self.label_7.setText("<font Color=green>\t Active</font>")
+            self.label_7.setText(QtGui.QApplication.translate("more", "<font Color=green>\t Active</font>", None, QtGui.QApplication.UnicodeUTF8))
 
         while scan_control != 1:
             try:
@@ -643,6 +642,6 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
     def evaliate_permissions(self):
         if os.geteuid() != 0:
-            QtGui.QMessageBox.warning(self,"Insufficient Priviledge","Aircrack and other dependencies need root priviledge to function, Please run application as root")
+            QtGui.QMessageBox.warning(self,QtGui.QApplication.translate("more", "Insufficient Priviledge", None, QtGui.QApplication.UnicodeUTF8) ,QtGui.QApplication.translate("more", "Aircrack and other dependencies need root priviledge to function, Please run application as root", None, QtGui.QApplication.UnicodeUTF8))
             sys.exit()
 

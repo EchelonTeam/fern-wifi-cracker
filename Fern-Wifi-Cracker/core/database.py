@@ -103,8 +103,8 @@ class database_dialog(QtGui.QDialog,database_ui):
                 set_key_entries(access_point,mac_address,encryption,key,channel)       # Write enrties to database
 
             except(TypeError):
-                QtGui.QMessageBox.warning(self,"Empty Database Entries",\
-                    "There are some fields with whitespaces,Please enter empty spaces with Access Point related data")
+                QtGui.QMessageBox.warning(self,QtGui.QApplication.translate("more", "Empty Database Entries", None, QtGui.QApplication.UnicodeUTF8),\
+                    QtGui.QApplication.translate("more", "There are some fields with whitespaces,Please enter empty spaces with Access Point related data", None, QtGui.QApplication.UnicodeUTF8))
                 break
 
         self.emit(QtCore.SIGNAL('update database label'))               # Update the Entries label on Main window

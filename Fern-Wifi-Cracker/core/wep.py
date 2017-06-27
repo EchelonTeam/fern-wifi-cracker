@@ -250,10 +250,10 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
     def show_tips(self):
         tips = tips_window()
         tips.type = 2
-        tips.setWindowTitle("Tips")
-        tips.label_2.setText("To copy the successfully cracked keys to clipboard, Please right click")
-        tips.label_3.setText("on the cracked key of your choice and select \"Copy\".")
-        tips.label_4.setText("You can also convert between ASCII to HEX keys for WEP.")
+        tips.setWindowTitle(QtGui.QApplication.translate("more", "Tips", None, QtGui.QApplication.UnicodeUTF8))
+        tips.label_2.setText(QtGui.QApplication.translate("more", "To copy the successfully cracked keys to clipboard, Please right click", None, QtGui.QApplication.UnicodeUTF8))
+        tips.label_3.setText(QtGui.QApplication.translate("more", "on the cracked key of your choice and select \"Copy\".", None, QtGui.QApplication.UnicodeUTF8))
+        tips.label_4.setText(QtGui.QApplication.translate("more", "You can also convert between ASCII to HEX keys for WEP.", None, QtGui.QApplication.UnicodeUTF8))
         tips.label_5.setVisible(False)
         tips.exec_()
 
@@ -319,13 +319,13 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.set_Progressbar_color("#8B0000")   # RED
         self.ivs_progress_label.setEnabled(False)
         self.dictionary_set.setVisible(False)
-        self.injecting_label.setText("Gathering packets")
-        self.associate_label.setText("Associating with Access Point")
-        self.injection_work_label_2.setText("Injection Capability Status")
-        self.ivs_progress_label.setText('IVS Status')
-        self.cracking_label_2.setText("Cracking Encryption")
-        self.gathering_label.setText("Packet Injection Status")
-        self.finished_label.setText("Finished")
+        self.injecting_label.setText(QtGui.QApplication.translate("more", "Gathering packets", None, QtGui.QApplication.UnicodeUTF8))
+        self.associate_label.setText(QtGui.QApplication.translate("more", "Associating with Access Point", None, QtGui.QApplication.UnicodeUTF8))
+        self.injection_work_label_2.setText(QtGui.QApplication.translate("more", "Injection Capability Status", None, QtGui.QApplication.UnicodeUTF8))
+        self.ivs_progress_label.setText(QtGui.QApplication.translate("more", 'IVS Status', None, QtGui.QApplication.UnicodeUTF8))
+        self.cracking_label_2.setText(QtGui.QApplication.translate("more", "Cracking Encryption", None, QtGui.QApplication.UnicodeUTF8))
+        self.gathering_label.setText(QtGui.QApplication.translate("more", "Packet Injection Status", None, QtGui.QApplication.UnicodeUTF8))
+        self.finished_label.setText(QtGui.QApplication.translate("more", "Finished", None, QtGui.QApplication.UnicodeUTF8))
         self.finished_label.setEnabled(False)
         self.key_label.setVisible(False)
 
@@ -333,27 +333,27 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
             self.keys_cracked_label.setVisible(False)
 
         self.wps_pin_label.setVisible(False)
-        self.attack_button.setText("Attack")
+        self.attack_button.setText(QtGui.QApplication.translate("more", "Attack", None, QtGui.QApplication.UnicodeUTF8))
 
 
     def set_if_WPS_Support(self,messagebox = False):
         victim_mac = variables.victim_mac
         if not variables.wps_functions.is_WPS_Device(victim_mac):
             self.wps_support_label.setEnabled(False)
-            self.wps_support_label.setText("Supports WPS")
+            self.wps_support_label.setText(QtGui.QApplication.translate("more", "Supports WPS", None, QtGui.QApplication.UnicodeUTF8))
             if(messagebox):
-                QtGui.QMessageBox.warning(self,"WPS Device Support","WPS (WIFI Protected Setup) is not supported or is disabled by the selected access point")
+                QtGui.QMessageBox.warning(self,QtGui.QApplication.translate("more", "WPS Device Support", None, QtGui.QApplication.UnicodeUTF8), QtGui.QApplication.translate("more", "WPS (WIFI Protected Setup) is not supported or is disabled by the selected access point", None, QtGui.QApplication.UnicodeUTF8))
             self.regular_attack_radio.setChecked(True)
             return
 
         self.wps_support_label.setEnabled(True)
-        self.wps_support_label.setText("<font color=yellow>Supports WPS</font>")
+        self.wps_support_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Supports WPS</font>", None, QtGui.QApplication.UnicodeUTF8))
 
 
     def check_reaver_status(self):
         if not variables.wps_functions.reaver_Installed():
-            answer = QtGui.QMessageBox.question(self,"Reaver not Detected",
-            '''The Reaver tool is currently not installed,The tool is necessary for attacking WPS Access Points.\n\nDo you want to open the download link?''',
+            answer = QtGui.QMessageBox.question(self,QtGui.QApplication.translate("more", "Reaver not Detected", None, QtGui.QApplication.UnicodeUTF8),
+            QtGui.QApplication.translate("more", "The Reaver tool is currently not installed,The tool is necessary for attacking WPS Access Points.\n\nDo you want to open the download link?", None, QtGui.QApplication.UnicodeUTF8),
             QtGui.QMessageBox.Yes,QtGui.QMessageBox.No)
             if(answer == QtGui.QMessageBox.Yes):
                 variables.wps_functions.browse_Reaver_Link()
@@ -378,7 +378,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("%s/resources/stop.png"%(os.getcwd())))
         self.attack_button.setIcon(icon)
-        self.attack_button.setText('Stop')
+        self.attack_button.setText(QtGui.QApplication.translate("more", 'Stop', None, QtGui.QApplication.UnicodeUTF8))
         self.thread_control = False
 
 
@@ -390,7 +390,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("%s/resources/wifi_4.png"%(os.getcwd())))
         self.attack_button.setIcon(icon)
-        self.attack_button.setText("Attack")
+        self.attack_button.setText(QtGui.QApplication.translate("more", "Attack", None, QtGui.QApplication.UnicodeUTF8))
 
         if(self.wps_attack_radio.isChecked()):
             variables.wps_functions.stop_Attack_WPS_Device()
@@ -400,19 +400,19 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def injection_working(self):
         self.injection_work_label_2.setEnabled(True)
-        self.injection_work_label_2.setText('<font color=yellow> Injection is working on %s</font>'%(variables.monitor_interface))
+        self.injection_work_label_2.setText(QtGui.QApplication.translate("more", '<font color=yellow> Injection is working on %s</font>', None, QtGui.QApplication.UnicodeUTF8) % (variables.monitor_interface))
 
     def injection_not_working(self):
         self.injection_work_label_2.setEnabled(True)
-        self.injection_work_label_2.setText('<font color=red> %s is not injecting or proximity is low </font>'%(variables.monitor_interface))
+        self.injection_work_label_2.setText(QtGui.QApplication.translate("more", '<font color=red> %s is not injecting or proximity is low </font>', None, QtGui.QApplication.UnicodeUTF8) % (variables.monitor_interface))
 
     def associating(self):
         self.associate_label.setEnabled(True)
-        self.associate_label.setText('<font color=yellow>Associating with Access Point</font>')
+        self.associate_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Associating with Access Point</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def association_failed(self):
         self.associate_label.setEnabled(True)
-        self.associate_label.setText('<font color=yellow>Security countermeasure Activated</font>')
+        self.associate_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Security countermeasure Activated</font>', None, QtGui.QApplication.UnicodeUTF8))
 
 
     def progress_maximum(self):
@@ -445,46 +445,46 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def gathering(self):
         self.injecting_label.setEnabled(True)
-        self.injecting_label.setText('<font color=yellow>Gathering Packets</font>')
+        self.injecting_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Gathering Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def passive_mode(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Passive Mode Activated</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Passive Mode Activated</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def injecting(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting ARP Packets</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting ARP Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def chop_chop_attack(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting Chop-Chop Packets</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting Chop-Chop Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def fragmented_attack(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting Fragmented Packets</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting Fragmented Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def hirte_attack(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting Hirte Packets</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting Hirte Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def caffe_latte_attack(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting Caffe Latte Packets</font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting Caffe Latte Packets</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def P0841_attack(self):
         self.gathering_label.setEnabled(True)
-        self.gathering_label.setText('<font color=yellow>Injecting ARP Frame Control (0x0841) Packets </font>')
+        self.gathering_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Injecting ARP Frame Control (0x0841) Packets </font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def key_not_found_yet(self):
         self.cracking_label_2.setEnabled(True)
-        self.cracking_label_2.setText('<font color=yellow>Cracking Encryption</font>')
+        self.cracking_label_2.setText(QtGui.QApplication.translate("more", '<font color=yellow>Cracking Encryption</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     def key_found(self):
         global victim_access_point
         self.cracking_label_2.setEnabled(True)
-        self.cracking_label_2.setText('<font color=yellow>Cracking Encryption</font>')
+        self.cracking_label_2.setText(QtGui.QApplication.translate("more", '<font color=yellow>Cracking Encryption</font>', None, QtGui.QApplication.UnicodeUTF8))
         self.finished_label.setEnabled(True)
-        self.finished_label.setText('<font color=yellow>Finished</font>')
+        self.finished_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Finished</font>', None, QtGui.QApplication.UnicodeUTF8))
 
         self.new_automate_key()
 
@@ -494,7 +494,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("%s/resources/wifi_4.png"%(os.getcwd())))
         self.attack_button.setIcon(icon)
-        self.attack_button.setText('Attack')
+        self.attack_button.setText(QtGui.QApplication.translate("more", 'Attack', None, QtGui.QApplication.UnicodeUTF8))
         self.thread_control = True
         self.cancel_wep_attack()
         variables.exec_command('killall airodump-ng')
@@ -508,7 +508,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def cracking(self):
         self.finished_label.setEnabled(True)
-        self.finished_label.setText('<font color=red>Please Wait....</font>')
+        self.finished_label.setText(QtGui.QApplication.translate("more", '<font color=red>Please Wait....</font>', None, QtGui.QApplication.UnicodeUTF8))
 
     #
     # THREADS FOR AUTOMATION
@@ -771,7 +771,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.cracked_keys += 1
         if(self.automate_checkbox.isChecked()):
             self.keys_cracked_label.setVisible(True)
-            self.keys_cracked_label.setText("<font color=yellow><b>%s keys cracked</b></font>"%(str(self.cracked_keys)))
+            self.keys_cracked_label.setText(QtGui.QApplication.translate("more", "<font color=yellow><b>%s keys cracked</b></font>", None, QtGui.QApplication.UnicodeUTF8)%(str(self.cracked_keys)))
         else:
             self.keys_cracked_label.setVisible(False)
 
@@ -784,7 +784,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
             return
 
         if(is_already_Cracked(variables.victim_mac,"WEP")):
-            answer = QtGui.QMessageBox.question(self,"Access Point Already Cracked",variables.victim_access_point + "'s key already exists in the database, Do you want to attack and update the already saved key?",QtGui.QMessageBox.Yes,QtGui.QMessageBox.No);
+            answer = QtGui.QMessageBox.question(self, QtGui.QApplication.translate("more", "Access Point Already Cracked", None, QtGui.QApplication.UnicodeUTF8), variables.victim_access_point + QtGui.QApplication.translate("more", "'s key already exists in the database, Do you want to attack and update the already saved key?", None, QtGui.QApplication.UnicodeUTF8) ,QtGui.QMessageBox.Yes,QtGui.QMessageBox.No);
             if(answer == QtGui.QMessageBox.No):
                 self.control = True
                 return
@@ -827,14 +827,14 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def associating_wps(self):
         self.associate_label.setEnabled(True)
-        self.associate_label.setText("<font color=yellow>Associating with WPS Device</font>")
+        self.associate_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Associating with WPS Device</font>", None, QtGui.QApplication.UnicodeUTF8))
 
 
     def associated_bruteforing(self):
         self.injecting_label.setEnabled(True)
         self.gathering_label.setEnabled(True)
-        self.injecting_label.setText("<font color=yellow>Associated with %s</font>" % variables.victim_mac)
-        self.gathering_label.setText("<font color=yellow>Bruteforcing WPS Device</font>")
+        self.injecting_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Associated with %s</font>", None, QtGui.QApplication.UnicodeUTF8) % variables.victim_mac)
+        self.gathering_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Bruteforcing WPS Device</font>", None, QtGui.QApplication.UnicodeUTF8))
 
 
     def updating_progress(self):
@@ -850,8 +850,8 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         else:
             self.set_Progressbar_color("green")
 
-        self.ivs_progress_label.setText("<font color=yellow>" + variables.wps_functions.progress + "% Complete</font>")
-        self.cracking_label_2.setText("<font color=yellow>Updating Progress</font>")
+        self.ivs_progress_label.setText("<font color=yellow>" + variables.wps_functions.progress + QtGui.QApplication.translate("more", "% Complete</font>", None, QtGui.QApplication.UnicodeUTF8))
+        self.cracking_label_2.setText(QtGui.QApplication.translate("more", "<font color=yellow>Updating Progress</font>"), None, QtGui.QApplication.UnicodeUTF8)
 
 
     def display_WPS_pin(self):
@@ -867,7 +867,7 @@ class wep_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.set_Progressbar_color("green")
         set_key_entries(variables.victim_access_point,variables.victim_mac,'WEP',variables.wps_functions.get_keys()[1],variables.victim_channel)
         self.emit(QtCore.SIGNAL('update database label'))
-        self.finished_label.setText("<font color=yellow>Finished</font>")
+        self.finished_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Finished</font>", None, QtGui.QApplication.UnicodeUTF8))
         self.new_automate_key()
         self.cancel_wep_attack()
         self.isfinished = True

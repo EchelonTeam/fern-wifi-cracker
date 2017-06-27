@@ -40,7 +40,7 @@ class wifi_attack_settings(QtGui.QDialog,Ui_attack_settings):
     def set_static_mac(self):
         mac_address = str(self.mac_edit.text())
         if not Check_MAC(mac_address):
-            QtGui.QMessageBox.warning(self,"Invalid MAC Address",variables.invalid_mac_address_error)
+            QtGui.QMessageBox.warning(self,QtGui.QApplication.translate("more", "Invalid MAC Address", None, QtGui.QApplication.UnicodeUTF8) ,variables.invalid_mac_address_error)
             self.mac_edit.setFocus()
         else:
             self.settings.create_settings('mac_address',mac_address)
@@ -121,7 +121,7 @@ class settings_dialog(QtGui.QDialog,settings):
         if len(variables.xterm_setting) > 0:
             self.xterm_checkbox.setChecked(True)
 
-        self.label_4.setText("\t\t<font color=green>%s Activated</font>"%(variables.monitor_interface))
+        self.label_4.setText(QtGui.QApplication.translate("more", "\t\t<font color=green>%s Activated</font>", None, QtGui.QApplication.UnicodeUTF8) %(variables.monitor_interface))
 
         list_ = ['All Channels']
         for list_numbers in range(1,15):

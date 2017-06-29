@@ -121,7 +121,7 @@ class settings_dialog(QtGui.QDialog,settings):
         if len(variables.xterm_setting) > 0:
             self.xterm_checkbox.setChecked(True)
 
-        self.label_4.setText(QtGui.QApplication.translate("more", "\t\t<font color=green>%s Activated</font>", None, QtGui.QApplication.UnicodeUTF8) %(variables.monitor_interface))
+        self.label_4.setText(QtGui.QApplication.translate("more", "\t\t<font color=green>%1 Activated</font>", None, QtGui.QApplication.UnicodeUTF8).arg(variables.monitor_interface))
 
         list_ = ['All Channels']
         for list_numbers in range(1,15):

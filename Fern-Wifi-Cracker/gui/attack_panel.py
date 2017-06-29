@@ -321,11 +321,7 @@ class Ui_attack_panel(object):
         self.ap_listwidget.item(1).setText(QtGui.QApplication.translate("attack_panel", "SwiftNG", None, QtGui.QApplication.UnicodeUTF8))
         self.ap_listwidget.setSortingEnabled(__sortingEnabled)
         self.attack_button.setText(QtGui.QApplication.translate("attack_panel", "Attack", None, QtGui.QApplication.UnicodeUTF8))
-        self.automate_checkbox.setToolTip(QtGui.QApplication.translate("attack_panel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Attack all Access points within range</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.automate_checkbox.setToolTip(QtGui.QApplication.translate("attack_panel", "Attack all Access points within range", None, QtGui.QApplication.UnicodeUTF8))
         self.automate_checkbox.setText(QtGui.QApplication.translate("attack_panel", "Automate", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("attack_panel", "Access Point Details", None, QtGui.QApplication.UnicodeUTF8))
         self.label_9.setText(QtGui.QApplication.translate("attack_panel", "<font color=green><b>ESSID:</b></font>", None, QtGui.QApplication.UnicodeUTF8))

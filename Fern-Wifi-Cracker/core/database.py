@@ -54,19 +54,19 @@ class database_dialog(QtGui.QDialog,database_ui):
             key_display = QtGui.QTableWidgetItem()
             channel_display = QtGui.QTableWidgetItem()
 
-            access_point_display.setText(QtGui.QApplication.translate("Dialog", "%s"%(access_point_var), None, QtGui.QApplication.UnicodeUTF8))
+            access_point_display.setText(QtGui.QApplication.translate("Dialog", "%1", None, QtGui.QApplication.UnicodeUTF8).arg(access_point_var))
             self.key_table.setItem(iterate,0,access_point_display)
 
-            mac_address_display.setText(QtGui.QApplication.translate("Dialog", "%s"%(mac_address_var), None, QtGui.QApplication.UnicodeUTF8))
+            mac_address_display.setText(QtGui.QApplication.translate("Dialog", "%1", None, QtGui.QApplication.UnicodeUTF8).arg(mac_address_var))
             self.key_table.setItem(iterate,1,mac_address_display)
 
-            encryption_display.setText(QtGui.QApplication.translate("Dialog", "%s"%(encryption_var), None, QtGui.QApplication.UnicodeUTF8))
+            encryption_display.setText(QtGui.QApplication.translate("Dialog", "%1", None, QtGui.QApplication.UnicodeUTF8).arg(encryption_var))
             self.key_table.setItem(iterate,2,encryption_display)
 
-            key_display.setText(QtGui.QApplication.translate("Dialog", "%s"%(key_var), None, QtGui.QApplication.UnicodeUTF8))
+            key_display.setText(QtGui.QApplication.translate("Dialog", "%1", None, QtGui.QApplication.UnicodeUTF8).arg(key_var))
             self.key_table.setItem(iterate,3,key_display)
 
-            channel_display.setText(QtGui.QApplication.translate("Dialog", "%s"%(channel_var), None, QtGui.QApplication.UnicodeUTF8))
+            channel_display.setText(QtGui.QApplication.translate("Dialog", "%1", None, QtGui.QApplication.UnicodeUTF8).arg(channel_var))
             self.key_table.setItem(iterate,4,channel_display)
 
 

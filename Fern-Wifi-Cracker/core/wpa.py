@@ -387,7 +387,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def deauthenticating_display(self):
         self.injecting_label.setEnabled(True)
-        self.injecting_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Deauthenticating %s</font>", None, QtGui.QApplication.UnicodeUTF8) % (self.select_client))
+        self.injecting_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Deauthenticating %1</font>", None, QtGui.QApplication.UnicodeUTF8).arg(self.select_client))
 
     def handshake_captured(self):
         self.gathering_label.setEnabled(True)
@@ -439,7 +439,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
 
     def update_speed_label(self,current_speed):
         self.finished_label.setEnabled(True)
-        self.finished_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Speed: \t %s k/s</font>', None, QtGui.QApplication.UnicodeUTF8)%(current_speed))
+        self.finished_label.setText(QtGui.QApplication.translate("more", '<font color=yellow>Speed: \t %1 k/s</font>', None, QtGui.QApplication.UnicodeUTF8).arg(current_speed))
 
     def display_label(self):
         self.finished_label.setEnabled(True)
@@ -639,7 +639,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
         self.cracked_keys += 1
         if(self.automate_checkbox.isChecked()):
             self.keys_cracked_label.setVisible(True)
-            self.keys_cracked_label.setText(QtGui.QApplication.translate("more", "<font color=yellow><b>%s keys cracked</b></font>", None, QtGui.QApplication.UnicodeUTF8)%(str(self.cracked_keys)))
+            self.keys_cracked_label.setText(QtGui.QApplication.translate("more", "<font color=yellow><b>%1 keys cracked</b></font>", None, QtGui.QApplication.UnicodeUTF8).arg(str(self.cracked_keys)))
         else:
             self.keys_cracked_label.setVisible(False)
 
@@ -786,7 +786,7 @@ class wpa_attack_dialog(QtGui.QDialog,Ui_attack_panel):
     def associated_bruteforing(self):
         self.injecting_label.setEnabled(True)
         self.gathering_label.setEnabled(True)
-        self.injecting_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Associated with %s</font>", None, QtGui.QApplication.UnicodeUTF8) % variables.victim_mac)
+        self.injecting_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Associated with %1</font>", None, QtGui.QApplication.UnicodeUTF8).arg(variables.victim_mac))
         self.gathering_label.setText(QtGui.QApplication.translate("more", "<font color=yellow>Bruteforcing WPS Device</font>", None, QtGui.QApplication.UnicodeUTF8))
 
 

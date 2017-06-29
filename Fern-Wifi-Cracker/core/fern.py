@@ -103,7 +103,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
         if len(items) == 0:
             self.label_16.setText(QtGui.QApplication.translate("more", "<font color=red>No Key Entries</font>", None, QtGui.QApplication.UnicodeUTF8))
         else:
-            self.label_16.setText(QtGui.QApplication.translate("more", '<font color=green>%s Key Entries</font>', None, QtGui.QApplication.UnicodeUTF8) %(str(len(items))))
+            self.label_16.setText(QtGui.QApplication.translate("more", '<font color=green>%1 Key Entries</font>', None, QtGui.QApplication.UnicodeUTF8).arg(str(len(items))))
 
 
     #
@@ -213,7 +213,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
 
     def interface_cards_found(self):
-        self.interface_combo.addItem('Select Interface')
+        self.interface_combo.addItem(QtGui.QApplication.translate("more", "Select Interface", None, QtGui.QApplication.UnicodeUTF8))
         interface_icon = QtGui.QIcon("%s/resources/mac_address.png"%(os.getcwd()))
         for interface in self.interface_cards:
             self.interface_combo.addItem(interface_icon,interface)
@@ -346,7 +346,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
 
 
     def monitor_mode_enabled(self):
-        self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=green>Monitor Mode Enabled on %s</font>"%(self.monitor_interface), None, QtGui.QApplication.UnicodeUTF8))
+        self.mon_label.setText(QtGui.QApplication.translate("more", "<font color=green>Monitor Mode Enabled on %1</font>", None, QtGui.QApplication.UnicodeUTF8).arg(self.monitor_interface))
         self.animate_monitor_mode(False)
         # Execute tips
         if(self.settings.setting_exists("tips")):
@@ -438,7 +438,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
     # WEP Thread SLOTS AND SIGNALS
     #
     def wep_number_changed(self):
-        self.wep_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wep_count), None, QtGui.QApplication.UnicodeUTF8))
+        self.wep_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%1</font><font color=red>\t Detected</font>', None, QtGui.QApplication.UnicodeUTF8).arg(self.wep_count))
 
     def wep_button_true(self):
         self.wep_button.setEnabled(True)
@@ -452,7 +452,7 @@ class mainwindow(QtGui.QDialog,Ui_Dialog):
     # WPA Thread SLOTS AND SIGNALS
     #
     def wpa_number_changed(self):
-        self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%s</font><font color=red>\t Detected</font>'%(self.wpa_count), None, QtGui.QApplication.UnicodeUTF8))
+        self.wpa_clientlabel.setText(QtGui.QApplication.translate("more", '<font color=red>%1</font><font color=red>\t Detected</font>', None, QtGui.QApplication.UnicodeUTF8).arg(self.wep_count))
 
     def wpa_button_true(self):
         self.wpa_button.setEnabled(True)

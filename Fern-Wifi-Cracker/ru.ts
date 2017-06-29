@@ -14,86 +14,92 @@
     <message>
         <location filename="gui/main_window.py" line="+448"/>
         <source>Fern WIFI Cracker</source>
-        <translation>Аудит Wi-Fi</translation>
+        <translation type="unfinished">Аудит беспроводных сетей</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> Refresh</source>
-        <translation>Обновить</translation>
+        <translation type="unfinished">Обновить</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Monitor Mode enabled on wlan0</source>
-        <translation>Режим мониторинга активирован на wlan0</translation>
+        <translation type="unfinished">Режим мониторинга активирован на wlan0</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Scan for Access points</source>
-        <translation>Сканирование точек доступа</translation>
+        <translation type="unfinished">Сканирование точек доступа</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Detection Status</source>
-        <translation>Статус обнаружения</translation>
+        <translation type="unfinished">Статус обнаружения</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Key Database</source>
-        <translation>База ключей</translation>
+        <translation type="unfinished">База ключей</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>No Key Entries</source>
-        <translation>Ключи отсутствуют</translation>
+        <translation type="unfinished">Ключи отсутствуют</translation>
     </message>
     <message>
-        <location line="+33299844"/>
+        <location line="+0"/>
         <source>ToolBox</source>
         <translation type="obsolete">Инструменты</translation>
     </message>
     <message>
+        <location line="-457"/>
         <source>About Fern WIFI Cracker</source>
         <translation type="obsolete">О программе</translation>
     </message>
     <message>
         <location filename="gui/settings.py" line="+95"/>
         <source>Access Point Scan Preferences</source>
-        <translation>Параметры сканирования точки доступа</translation>
+        <translation type="unfinished">Параметры сканирования точки доступа</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Channel:</source>
-        <translation>Канал:</translation>
+        <translation type="unfinished">Канал:</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Automatic scan to all channels is Default without XTerm</source>
-        <translation>По умолчанию включено автоматическое сканирование всех каналов без XTerm</translation>
+        <translation type="unfinished">По умолчанию включено автоматическое сканирование всех каналов без XTerm</translation>
     </message>
     <message>
-        <location filename="gui/main_window.py" line="-33299849"/>
+        <location filename="gui/main_window.py" line="+452"/>
         <source>WEP</source>
-        <translation>WEP</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
         <source>WPA</source>
-        <translation>WPA</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
         <source>WIFI Attack Options</source>
-        <translation>Параметры WIFI атаки</translation>
+        <translation type="unfinished">Параметры WIFI атаки</translation>
     </message>
     <message>
         <location filename="gui/settings.py" line="-1"/>
         <source>Enable XTerms</source>
-        <translation>Включить XTerms</translation>
+        <translation type="unfinished">Включить XTerms</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>	 &lt;font color=green&gt;Activated&lt;/font&gt;</source>
-        <translation>	 &lt;font color=green&gt;Activated&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=green&gt;Активировано&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <location filename="core/database.py" line="+69"/>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -101,171 +107,167 @@
     <message>
         <location filename="gui/attack_panel.py" line="+315"/>
         <source>Attack Panel</source>
-        <translation>Панель атаки</translation>
+        <translation type="unfinished">Панель атаки</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Select Target Access Point</source>
-        <translation>Выберите целевую точку доступа</translation>
+        <translation type="unfinished">Выберите целевую точку доступа</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Attack</source>
-        <translation>Атака</translation>
+        <translation type="unfinished">Атака</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+2"/>
         <source>Automate</source>
-        <translation>Автоматизация</translation>
+        <translation type="unfinished">Автоматизация</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Access Point Details</source>
-        <translation>Свойства точки доступа</translation>
+        <translation type="unfinished">Свойства точки доступа</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Supports WPS</source>
-        <translation>Поддержка WPS</translation>
+        <translation type="unfinished">Поддерживает WPS</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attack Option</source>
-        <translation>Настройки атаки</translation>
+        <translation type="unfinished">Настройки атаки</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Regular Attack</source>
-        <translation>Обычная атака</translation>
+        <translation type="unfinished">Обычная атака</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>WPS  Attack</source>
-        <translation>Атака WPS</translation>
+        <translation type="unfinished">Атака WPS</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Gathering Packets</source>
-        <translation>Захват пакетов</translation>
+        <translation type="unfinished">Захват пакетов</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Packet Injection Status</source>
-        <translation>Статус инъекции пакетов</translation>
+        <translation type="unfinished">Статус инъекции пакетов</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Cracking Encryption</source>
-        <translation>Взлом шифрования</translation>
+        <translation type="unfinished">Взлом шифрования</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Finished</source>
-        <translation>Завершено</translation>
+        <translation type="unfinished">Завершено</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Browse</source>
-        <translation>Обзор</translation>
+        <translation type="unfinished">Обзор</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>IVS status</source>
-        <translation>Статус IVC</translation>
+        <translation type="unfinished">Статус IVC</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>2 Keys Cracked</source>
-        <translation>2 ключа взломано</translation>
+        <translation type="unfinished">2 ключа взломано</translation>
     </message>
     <message>
-        <location line="-33"/>
-        <source>Babarere</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>SwiftNG</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:7pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Attack all Access points within range&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>&lt;font color=green&gt;&lt;b&gt;ESSID:&lt;/b&gt;&lt;/font&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source> Babarere</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;font color=green&gt;&lt;b&gt;BSSID:&lt;/b&gt;&lt;/font&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>00:CA:30:34:DF:F9</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;font color=green&gt;&lt;b&gt;Channel:&lt;/b&gt;&lt;/font&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;font color=green&gt;&lt;b&gt;Power:&lt;/b&gt;&lt;/font&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>-67</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;font color=green&gt;&lt;b&gt;Encryption:&lt;/b&gt;&lt;/font&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>WEP</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="-8"/>
         <source>Associating with Access Point</source>
-        <translation>Соединение с точкой доступа</translation>
+        <translation type="unfinished">Соединение с точкой доступа</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Injection Capability Status</source>
-        <translation>Статус возможности инъекции </translation>
+        <translation type="unfinished">Статус возможности инъекции</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-10"/>
+        <source>WEP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-16"/>
+        <source>Babarere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>SwiftNG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>&lt;font color=green&gt;&lt;b&gt;ESSID:&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> Babarere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;font color=green&gt;&lt;b&gt;BSSID:&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>00:CA:30:34:DF:F9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;font color=green&gt;&lt;b&gt;Channel:&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;font color=green&gt;&lt;b&gt;Power:&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=green&gt;&lt;b&gt;Мощность:&lt;/b&gt;&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>-67</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;font color=green&gt;&lt;b&gt;Encryption:&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=green&gt;&lt;b&gt;Шифрование:&lt;/b&gt;&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>WPS PIN: 192345673</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
         <source>WEP KEY: 1234567890</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Attack all Access points within range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -273,52 +275,53 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="gui/attack_settings.py" line="+92"/>
         <source>WIFI Attack Settings</source>
-        <translation>Настройки Wi-Fi атаки</translation>
+        <translation type="unfinished">Настройки Wi-Fi атаки</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Default MAC Settings</source>
-        <translation>Настройки MAC-адреса по-умолчанию</translation>
+        <translation type="unfinished">Настройки MAC-адреса по-умолчанию</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set default MAC address to be used when attempting WIFI  attacks</source>
-        <translation>Установить MAC-адрес по умолчанию для проведения Wi-Fi атак</translation>
+        <translation type="unfinished">Установить MAC-адрес по умолчанию для проведения Wi-Fi атак</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set MAC</source>
-        <translation>Установить MAC-адрес</translation>
+        <translation type="unfinished">Установить MAC-адрес</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Capture File Settings</source>
-        <translation>Настройки файла захвата</translation>
+        <translation type="unfinished">Настройки файла захвата</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set Directory for storing capture files for offline usage</source>
-        <translation>Установить каталог для сохранения файлов захвата для оффлайн использования</translation>
+        <translation type="unfinished">Установить каталог для сохранения файлов захвата для оффлайн использования</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Browse</source>
-        <translation>Обзор</translation>
+        <translation type="unfinished">Обзор</translation>
     </message>
 </context>
 <context>
     <name>cookie_hijacker</name>
     <message>
-        <location line="+33301992"/>
+        <location line="-54"/>
         <source>Fern - Cookie Hijacker</source>
         <translation type="obsolete">Fern - похититель печенек</translation>
     </message>
     <message>
+        <location line="-45"/>
         <source>Refresh</source>
         <translation type="obsolete">Обновить</translation>
     </message>
     <message>
-        <location line="-33302091"/>
+        <location line="+0"/>
         <source>Ethernet Mode</source>
         <translation type="obsolete">Режим Ethernet</translation>
     </message>
@@ -358,72 +361,73 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="gui/database.py" line="+118"/>
         <source>Fern - Key Database</source>
-        <translation>База ключей</translation>
+        <translation type="unfinished">База ключей</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Decrypted wireless keys are automatically added to the sqlite database after a successful</source>
-        <translation>Подобранные ключи беспроводных сетей автоматически сохраняются после успешной</translation>
+        <translation type="unfinished">Подобранные ключи беспроводных сетей автоматически сохраняются после успешной</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>attack, Alternatively you can insert keys to the database manually</source>
-        <translation>атаки. Вы также можете добавить ключи вручную</translation>
+        <translation type="unfinished">атаки. Вы также можете добавить ключи вручную</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Access Point</source>
-        <translation>Точка доступа</translation>
+        <translation type="unfinished">Точка доступа</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Mac Address</source>
-        <translation>MAC-адрес</translation>
+        <translation type="unfinished">MAC-адрес</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Encryption</source>
-        <translation>Шифрование</translation>
+        <translation type="unfinished">Шифрование</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Key</source>
-        <translation>Ключ</translation>
+        <translation type="unfinished">Ключ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Channel</source>
-        <translation>Канал</translation>
+        <translation type="unfinished">Канал</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Save Changes</source>
-        <translation>Сохранить изменения</translation>
+        <translation type="unfinished">Сохранить изменения</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Insert New Key</source>
-        <translation>Добавить новый ключ</translation>
+        <translation type="unfinished">Добавить новый ключ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="unfinished">Удалить</translation>
     </message>
 </context>
 <context>
     <name>fern_geotrack</name>
     <message>
-        <location line="+33301818"/>
+        <location line="-112"/>
         <source>Insert Mac Address</source>
         <translation type="obsolete">Вставить MAC-адрес</translation>
     </message>
     <message>
+        <location line="-16"/>
         <source>Mac Address: </source>
         <translation type="obsolete">MAC-адрес:</translation>
     </message>
     <message>
-        <location line="-33301946"/>
+        <location line="+0"/>
         <source>Country: </source>
         <translation type="obsolete">Страна:</translation>
     </message>
@@ -451,11 +455,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>label_16</name>
     <message>
-        <location filename="core/fern.py" line="+104"/>
+        <location line="+0"/>
         <source>&lt;font color=red&gt;No Key Entries&lt;/font&gt;</source>
         <translation type="obsolete">&lt;font color=red&gt;Пусто&lt;/font&gt;</translation>
     </message>
     <message>
+        <location line="+0"/>
         <source>&lt;font color=green&gt;%s Key Entries&lt;/font&gt;</source>
         <translation type="obsolete">&lt;font color=green&gt;%s ключей&lt;/font&gt;</translation>
     </message>
@@ -463,16 +468,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>label_7</name>
     <message>
-        <location line="+195"/>
+        <location line="+0"/>
         <source>&lt;font Color=green&gt;	 Initializing&lt;/font&gt;</source>
         <translation type="obsolete">&lt;font Color=green&gt; Инициализация&lt;/font&gt;</translation>
     </message>
     <message>
+        <location line="+0"/>
         <source>&lt;font Color=red&gt;	 Stopped&lt;/font&gt;</source>
         <translation type="obsolete">&lt;font Color=red&gt; Остановлено&lt;/font&gt;</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="+0"/>
         <source>&lt;font Color=green&gt;	 Active&lt;/font&gt;</source>
         <translation type="obsolete">&lt;font Color=green&gt; Активно&lt;/font&gt;</translation>
     </message>
@@ -480,6 +486,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>mon_label</name>
     <message>
+        <location line="+0"/>
         <source>problem occured while setting up the monitor mode of selected</source>
         <translation type="obsolete">Возникли проблемы при переводе интерфейса в мониторный режим</translation>
     </message>
@@ -487,419 +494,434 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>more</name>
     <message>
-        <location line="-5"/>
+        <location filename="core/fern.py" line="+104"/>
         <source>&lt;font color=red&gt;No Key Entries&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Ключи отсутствуют&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Ключи отсутствуют&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>&lt;font color=green&gt;%s Key Entries&lt;/font&gt;</source>
-        <translation>&lt;font color=green&gt;%s ключей&lt;/font&gt;</translation>
+        <source>&lt;font color=green&gt;%1 Key Entries&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=green&gt;%1 ключей&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+105"/>
         <source>&lt;font color=red&gt;No Wireless Interface was found&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Беспроводной интерфейс не найден&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Беспроводной интерфейс не найден&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>&lt;font color=red&gt;Select an interface card&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Выберете карту интерфейса&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Выберете адаптер&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+36"/>
         <source>&lt;font color=red&gt;Monitor Mode not enabled check manually&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Режим мониторинга не включен, проверьте найстроки вручную &lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Режим мониторинга не включен, проверьте найстроки вручную&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+89"/>
         <source>problem occured while setting up the monitor mode of selected</source>
-        <translation>Возникли проблемы при переводе интерфейса в режим мониторинга</translation>
+        <translation type="unfinished">Возникли проблемы при переводе интерфейса в режим мониторинга</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>&lt;font color=red&gt;Enable monitor mode to access settings&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Включить режим мониторинга для доступа к настройкам&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Включите режим мониторинга для доступа к настройкам&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>&lt;font color=red&gt;Enable monitor mode before scanning&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Включить режим мониторинга перед сканированием&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Включите режим мониторинга перед сканированием&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+65"/>
         <source>None Detected</source>
-        <translation>Не обнаружено</translation>
+        <translation type="unfinished">Не обнаружено</translation>
     </message>
     <message>
         <location line="-57"/>
         <source>&lt;font Color=green&gt;	 Initializing&lt;/font&gt;</source>
-        <translation>&lt;font Color=green&gt;	 Инициализация &lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font Color=green&gt; Инициализация&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>&lt;font Color=red&gt;	 Stopped&lt;/font&gt;</source>
-        <translation>&lt;font Color=red&gt;	 Остановлено&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font Color=red&gt; Остановлено&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+137"/>
         <source>&lt;font Color=green&gt;	 Active&lt;/font&gt;</source>
-        <translation>&lt;font Color=green&gt;	 Активно&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font Color=green&gt; Активно&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="core/tools.py" line="+124"/>
-        <source>		&lt;font color=green&gt;%s Activated&lt;/font&gt;</source>
-        <translation>		&lt;font color=green&gt;%s Активирован&lt;/font&gt;</translation>
+        <source>		&lt;font color=green&gt;%1 Activated&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=green&gt;%1 Активирован&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="+226"/>
         <source>Tips</source>
-        <translation>Советы</translation>
+        <translation type="unfinished">Советы</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>To copy the successfully cracked keys to clipboard, Please right click</source>
-        <translation>Чтобы скопировать успешно взломанные ключи в буфер обмена, щелкните правой кнопкой мыши</translation>
+        <translation type="unfinished">Чтобы скопировать успешно взломанные ключи в буфер обмена, щелкните правой кнопкой мыши</translation>
     </message>
     <message>
         <location filename="core/wep.py" line="+255"/>
         <source>on the cracked key of your choice and select &quot;Copy&quot;.</source>
-        <translation>на необходимом взломанномм ключе и выберите «Копировать».</translation>
+        <translation type="unfinished">на взломанном ключе и выберите «Копировать».</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="+2"/>
         <source>You can also convert between ASCII to HEX keys for WEP.</source>
-        <translation>Вы также можете конвертировать ключи из ASCII в HEX для WEP.</translation>
+        <translation type="unfinished">Вы также можете конвертировать ключи из ASCII в HEX для WEP.</translation>
     </message>
     <message>
         <location filename="core/wep.py" line="+67"/>
         <source>Gathering packets</source>
-        <translation>Сбор пакетов</translation>
+        <translation type="unfinished">Сбор пакетов</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Associating with Access Point</source>
-        <translation>Соединение с точкой доступа</translation>
+        <translation type="unfinished">Соединение с точкой доступа</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Injection Capability Status</source>
-        <translation>Статус возможности инъекции </translation>
+        <translation type="unfinished">Статус возможности инъекции</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>IVS Status</source>
-        <translation>IVS Статус</translation>
+        <translation type="unfinished">IVS Статус</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Cracking Encryption</source>
-        <translation>Взлом шифрования</translation>
+        <translation type="unfinished">Взлом шифрования</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Packet Injection Status</source>
-        <translation>Статус инъекции пакетов</translation>
+        <translation type="unfinished">Статус инъекции пакетов</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="+74"/>
         <source>Finished</source>
-        <translation>Завершено</translation>
+        <translation type="unfinished">Завершено</translation>
     </message>
     <message>
         <location line="+106"/>
         <source>Attack</source>
-        <translation>Атака</translation>
+        <translation type="unfinished">Атака</translation>
     </message>
     <message>
         <location line="-89"/>
         <source>Supports WPS</source>
-        <translation>Поддержка WPS</translation>
+        <translation type="unfinished">Поддерживает WPS</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>WPS Device Support</source>
-        <translation>Поддержка WPS-устройств</translation>
+        <translation type="unfinished">Поддержка WPS-устройств</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>WPS (WIFI Protected Setup) is not supported or is disabled by the selected access point</source>
-        <translation>WPS (WIFI Protected Setup) не поддерживается или оключено у выбранной точкой доступа</translation>
+        <translation type="unfinished">WPS (WIFI Protected Setup) не поддерживается или оключено у выбранной точки доступа</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&lt;font color=yellow&gt;Supports WPS&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Поддержка WPS&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Поддерживает WPS&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Reaver not Detected</source>
-        <translation>Reaver не обнаружен</translation>
+        <translation type="unfinished">Reaver не обнаружен</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The Reaver tool is currently not installed,The tool is necessary for attacking WPS Access Points.
 
 Do you want to open the download link?</source>
-        <translation>Инструмент Reaver в настоящее время не установлен. Инструмент необходим для атаки на точки доступа WPS.
+        <translation type="unfinished">Инструмент Reaver в настоящее время не установлен. Инструмент необходим для атаки на точки доступа WPS.
 
 Вы хотите открыть ссылку для загрузки?</translation>
     </message>
     <message>
         <location line="+340"/>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation type="unfinished">Стоп</translation>
     </message>
     <message>
         <location filename="core/wep.py" line="+76"/>
-        <source>&lt;font color=yellow&gt; Injection is working on %s&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt; Статус инъекции %s&lt;/font&gt;</translation>
+        <source>&lt;font color=yellow&gt; Injection is working on %1&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=yellow&gt; Статус инъекции %1&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>&lt;font color=red&gt; %s is not injecting or proximity is low &lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt; %s инъекция не применима&lt;/font&gt;</translation>
+        <source>&lt;font color=red&gt; %1 is not injecting or proximity is low &lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=red&gt; %1 инъекция не применима&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Associating with Access Point&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Связь с точкой доступа&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Связь с точкой доступа&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Security countermeasure Activated&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Контрмера безопасности активирована&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Контрмера безопасности активирована&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+33"/>
         <source>&lt;font color=yellow&gt;Gathering Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Сбор пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Сбор пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Passive Mode Activated&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Пассивный режим активирован&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Пассивный режим активирован&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting ARP Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция ARP пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция ARP пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting Chop-Chop Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция Chop-Chop пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция Chop-Chop пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting Fragmented Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция фрагментированных пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция фрагментированных пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting Hirte Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция Hirte пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция Hirte пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting Caffe Latte Packets&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция Caffe Latte пакетов&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция Caffe Latte пакетов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Injecting ARP Frame Control (0x0841) Packets &lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Инъекция ARP Frame Control (0x0841) пакетов &lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Инъекция ARP Frame Control (0x0841) пакетов &lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>&lt;font color=yellow&gt;Cracking Encryption&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Взлом шифрования&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Взлом шифрования&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="+151"/>
         <source>&lt;font color=yellow&gt;Finished&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Готово &lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Готово&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="core/wep.py" line="+26"/>
         <source>&lt;font color=red&gt;Please Wait....&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Пожалуйста, подождите ....&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Пожалуйста, подождите ...&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="-181"/>
-        <source>&lt;font color=yellow&gt;&lt;b&gt;%s keys cracked&lt;/b&gt;&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;&lt;b&gt;%s ключей взломано&lt;/b&gt;&lt;/font&gt;</translation>
+        <source>&lt;font color=yellow&gt;&lt;b&gt;%1 keys cracked&lt;/b&gt;&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=yellow&gt;&lt;b&gt;%1 ключей взломано&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+12"/>
         <source>Access Point Already Cracked</source>
-        <translation>Точка доступа уже взломана</translation>
+        <translation type="unfinished">Точка доступа уже взломана</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>&apos;s key already exists in the database, Do you want to attack and update the already saved key?</source>
-        <translation>ключ уже существует в базе данных, вы хотите атаковать и обновлять уже сохраненный ключ?</translation>
+        <translation type="unfinished">ключ уже существует в базе данных, вы хотите атаковать и обновить уже сохраненный ключ?</translation>
     </message>
     <message>
         <location line="+129"/>
         <source>&lt;font color=yellow&gt;Associating with WPS Device&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Связь с WPS-устройством&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Связь с WPS-устройством&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>&lt;font color=yellow&gt;Associated with %s&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Установка связи с %s&lt;/font&gt;</translation>
+        <source>&lt;font color=yellow&gt;Associated with %1&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=yellow&gt;Установка связи с %1&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&lt;font color=yellow&gt;Bruteforcing WPS Device&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Атака полным перебором WPS-устройства&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Атака полным перебором WPS-устройства&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>% Complete&lt;/font&gt;</source>
-        <translation>% Завершено&lt;/font&gt;</translation>
+        <translation type="unfinished">% Завершено&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&lt;font color=yellow&gt;Updating Progress&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt; Обновление статуса&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt; Обновление статуса&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="-579"/>
         <source>on the key of your choice and select &quot;Copy&quot;.</source>
-        <translation>по выбранному ключу и выберите «Копировать».</translation>
+        <translation type="unfinished">по выбранному ключу и выберите «Копировать».</translation>
     </message>
     <message>
         <location line="+69"/>
         <source>Deauthentication Status</source>
-        <translation>Статус деаутентификации</translation>
+        <translation type="unfinished">Статус деаутентификации</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Probing Access Point</source>
-        <translation>Пробная точка доступа</translation>
+        <translation type="unfinished">Пробую точку доступа</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Current Dictionary File</source>
-        <translation>Текущий файл словаря</translation>
+        <translation type="unfinished">Текущий файл словаря</translation>
     </message>
     <message>
         <location line="+87"/>
         <source>Current Phrase</source>
-        <translation>Текущая фраза</translation>
+        <translation type="unfinished">Текущая фраза</translation>
     </message>
     <message>
         <location line="-85"/>
         <source>Bruteforcing Encryption</source>
-        <translation>Атака шифрования полным перебором</translation>
+        <translation type="unfinished">Атака шифрования полным перебором</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Handshake Status</source>
-        <translation>Handshake статус</translation>
+        <translation type="unfinished">Handshake статус</translation>
     </message>
     <message>
         <location line="+80"/>
         <source>&lt;font color=red&gt;Automatically probing and adding clients mac-addresses, please wait...&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Автоматическое определение и добавление MAC-адресов клиентов, пожалуйста, подождите ...&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Автоматическое определение и добавление MAC-адресов клиентов, пожалуйста, подождите ...&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>&lt;font color=yellow&gt;Deauthenticating %s&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Деаутентификация %s&lt;/font&gt;</translation>
+        <source>&lt;font color=yellow&gt;Deauthenticating %1&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=yellow&gt;Деаутентификация %1&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&lt;font color=yellow&gt;Handshake Captured&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Handshake захват&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Handshake перехвачен&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>&lt;font color=yellow&gt;Bruteforcing WPA Encryption&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Атака полным перебором WPA шифрования&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Атака полным перебором WPA шифрования&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;font color=yellow&gt;Speed: 	 %s k/s&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Скорость: 	 %s k/s&lt;/font&gt;</translation>
+        <source>&lt;font color=yellow&gt;Speed: 	 %1 k/s&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=yellow&gt;Скорость: %1 k/s&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>&lt;font color=red&gt;WPA Key was not found, please try another wordlist file&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Ключ WPA не найден, попробуйте другой файл списка слов &lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Ключ WPA не найден, попробуйте другой файл списка слов&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+309"/>
         <source>&lt;font color=red&gt;&lt;b&gt;Select Wordlist&lt;/b&gt;&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;&lt;b&gt;Выберите список слов&lt;/b&gt;&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;&lt;b&gt;Выберите список слов&lt;/b&gt;&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="-69"/>
         <source>&lt;font color=red&gt;Client mac-address is needed&lt;/font&gt;</source>
-        <translation>&lt;font color=red&gt;Требуется MAC-адрес клиента&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=red&gt;Требуется MAC-адрес клиента&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>&lt;font color=yellow&gt;Probing Access Point&lt;/font&gt;</source>
-        <translation>&lt;font color=yellow&gt;Пробная точка доступа&lt;/font&gt;</translation>
+        <translation type="unfinished">&lt;font color=yellow&gt;Пробую точку доступа&lt;/font&gt;</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Select Wordlist</source>
-        <translation>Выберите список слов</translation>
+        <translation type="unfinished">Выберите список слов</translation>
     </message>
     <message>
-        <location filename="core/database.py" line="+106"/>
+        <location filename="core/database.py" line="+37"/>
         <source>Empty Database Entries</source>
-        <translation>Записи базы данных пусты</translation>
+        <translation type="unfinished">Записи базы данных пусты</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>There are some fields with whitespaces,Please enter empty spaces with Access Point related data</source>
-        <translation>Есть несколько полей с пробелами. Пожалуйста, заполните пустые поля</translation>
+        <translation type="unfinished">Есть несколько полей с пробелами. Пожалуйста, заполните пустые поля</translation>
     </message>
     <message>
         <location filename="core/fern.py" line="+77"/>
         <source>Insufficient Priviledge</source>
-        <translation>Недостаточно привилегий</translation>
+        <translation type="unfinished">Недостаточно привилегий</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Aircrack and other dependencies need root priviledge to function, Please run application as root</source>
-        <translation>Aircrack и другие зависимости нуждаются в привилегиях root пользователя для работы, пожалуйста, запустите приложение от root пользователя</translation>
+        <translation type="unfinished">Aircrack и другие зависимости нуждаются в привилегиях root пользователя для работы, пожалуйста, запустите приложение от root пользователя</translation>
     </message>
     <message>
         <location filename="core/tools.py" line="-81"/>
         <source>Invalid MAC Address</source>
-        <translation>Неверный MAC адрес</translation>
+        <translation type="unfinished">Неверный MAC адрес</translation>
     </message>
     <message>
         <location filename="core/wpa.py" line="-72"/>
         <source>WPA Attack Requirement</source>
-        <translation>Требование к WPA атаки</translation>
+        <translation type="unfinished">Требование к атаке WPA</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>At least one client MAC-Address asscociated with the Access Point is required to successfully attack the WPA Encryption, If you know a client MAC Address you can add it manually or wait for the probing process to detect client addresses</source>
-        <translation>Для успешной атаки на WPA-шифрование требуется хотя бы один MAC-адрес клиента, связанный с точкой доступа. Если вы знаете MAC-адрес клиента, вы можете добавить его вручную или дождаться, пока процесс обнаружения обнаружит адреса клиентов</translation>
+        <translation type="unfinished">Для успешной атаки на WPA-шифрование требуется хотя бы один MAC-адрес клиента, связанный с точкой доступа. Если вы знаете MAC-адрес клиента, вы можете добавить его вручную или дождаться, пока процесс не обнаружит адреса клиентов</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Invalid Client MAC Address</source>
-        <translation>Неверный MAC адрес клиента</translation>
+        <translation type="unfinished">Неверный MAC адрес клиента</translation>
+    </message>
+    <message>
+        <location filename="core/fern.py" line="-433"/>
+        <source>Select Interface</source>
+        <translation type="unfinished">Выбрать интерфейс</translation>
+    </message>
+    <message>
+        <location line="+133"/>
+        <source>&lt;font color=green&gt;Monitor Mode Enabled on %1&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=green&gt;Режим мониторинга включен на %1&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <location line="+106"/>
+        <source>&lt;font color=red&gt;%1&lt;/font&gt;&lt;font color=red&gt;	 Detected&lt;/font&gt;</source>
+        <translation type="unfinished">&lt;font color=red&gt;%1&lt;/font&gt;&lt;font color=red&gt; Обнаружено&lt;/font&gt;</translation>
     </message>
 </context>
 <context>
     <name>ray_fusion</name>
     <message>
-        <location line="-656"/>
+        <location filename="core/wep.py" line="-168"/>
         <source>Service </source>
         <translation type="obsolete">Сервис</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-343"/>
         <source>Hide Settings</source>
         <translation type="obsolete">Скрыть настройки</translation>
     </message>
@@ -909,11 +931,12 @@ Do you want to open the download link?</source>
         <translation type="obsolete">Настройки</translation>
     </message>
     <message>
+        <location line="+0"/>
         <source>Default Wordlists</source>
         <translation type="obsolete">Словарь по умолчанию</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="+0"/>
         <source>Custom Wordlists</source>
         <translation type="obsolete">Пользовательский словарь</translation>
     </message>
@@ -1018,52 +1041,53 @@ Do you want to open the download link?</source>
     <message>
         <location filename="gui/tips.py" line="+88"/>
         <source>Tips - Scan settings</source>
-        <translation>Советы - Настройки сканирования</translation>
+        <translation type="unfinished">Советы - Настройки сканирования</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>To Access the &quot;Settings&quot; for the network scan preferences &quot;Double click&quot;</source>
-        <translation>Используйте двойной щелчок мыши для доступа к настройкам сетевого сканирования  </translation>
+        <translation type="unfinished">Используйте двойной щелчок мыши для доступа к настройкам сетевого сканирования</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>on any area of the main window, &quot;Scan for network button&quot; is used to</source>
-        <translation>в любой области главного окна, &quot;Сканирование для сетевой кнопки&quot; используется для</translation>
+        <translation type="unfinished">в любой области главного окна, &quot;Сканирование для сетевой кнопки&quot; используется для</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>scan for network based on the settings options of the settings dialog</source>
-        <translation>Сканирование сети на основе параметров настройки в диалоге настроек</translation>
+        <translation type="unfinished">Сканирование сети на основе параметров настройки в диалоге настроек</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Default  is automated scan, Fake Mac-Address is always used</source>
-        <translation>По умолчанию включено автоматическое сканирование, Fake Mac-Address используется всегда</translation>
+        <translation type="unfinished">По умолчанию включено автоматическое сканирование, Fake Mac-Address используется всегда</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Don&apos;t show this message again</source>
-        <translation>Больше не показывать это сообщение</translation>
+        <translation type="unfinished">Больше не показывать это сообщение</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Ok</source>
-        <translation>Ок</translation>
+        <translation type="unfinished">Ок</translation>
     </message>
 </context>
 <context>
     <name>toolbox_win</name>
     <message>
-        <location line="+33302022"/>
+        <location filename="core/wep.py" line="+0"/>
         <source>Fern - ToolBox</source>
         <translation type="obsolete">Дополнительные инструменты</translation>
     </message>
     <message>
+        <location line="+0"/>
         <source>Features</source>
         <translation type="obsolete">Инструменты</translation>
     </message>
     <message>
-        <location line="-33302116"/>
+        <location line="+0"/>
         <source>General Settings</source>
         <translation type="obsolete">Общие настройки</translation>
     </message>
@@ -1081,6 +1105,7 @@ Do you want to open the download link?</source>
 <context>
     <name>wep_clientlabel</name>
     <message>
+        <location line="+0"/>
         <source>None Detected</source>
         <translation type="obsolete">Не обнаружено</translation>
     </message>
@@ -1088,6 +1113,7 @@ Do you want to open the download link?</source>
 <context>
     <name>wpa_clientlabel</name>
     <message>
+        <location line="+0"/>
         <source>None Detected</source>
         <translation type="obsolete">Не обнаружено</translation>
     </message>

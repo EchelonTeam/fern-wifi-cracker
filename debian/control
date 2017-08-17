@@ -1,7 +1,7 @@
 Source: fern-wifi-cracker
 Section: utils
 Priority: extra
-Maintainer: Devon Kearns <dookie@kali.org>
+Maintainer: Scanner-VS maintainers <support.sca@npo-echelon.ru>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.3
 Homepage: https://github.com/savio-code/fern-wifi-cracker
